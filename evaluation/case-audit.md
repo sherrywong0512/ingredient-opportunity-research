@@ -6,11 +6,11 @@
 
 | Case | Raw rubric result | Applied cap | Published quality result | Decision-readiness blocker |
 |---|---:|---:|---:|---|
-| Isomalt — China bakery | 79 | 75 | **75/100** | no reproducible current-SKU/label coverage; US legal route unresolved |
-| Gellan gum — consumer products | 63 | 50 | **50/100** | target-market China regulation was not extracted to exact product-category/use rows |
-| HMO — global market | 61 | 50 | **50/100** | China molecule × source × use regulation and industrial price evidence remain incomplete |
+| Isomalt — China bakery | 82 | none | **82/100** | complete current labels remain inaccessible; US legal route unresolved |
+| Gellan gum — consumer products | 72 | none | **72/100** | current complete SKU labels, matched system cost and EU SKU classification remain unresolved |
+| HMO — global market | 68 | none | **68/100** | supplier-strain applicability, current complete labels, full US/EU matrix and industrial RFQs remain incomplete |
 
-Interpretation: the isomalt report is suitable for project screening with stated gaps. The gellan gum and HMO reports are directional examples, not commercial decision inputs.
+Interpretation: all three reports are suitable for project screening with stated gaps; none replaces supplier-specific regulatory review, formulation validation or procurement evidence.
 
 ## Rubric breakdown
 
@@ -18,23 +18,23 @@ Interpretation: the isomalt report is suitable for project screening with stated
 |---|---:|---:|---:|---:|
 | Identity and specification accuracy | 8 | 8 | 8 | 8 |
 | Property/original-literature evidence and adverse findings | 12 | 9 | 8 | 8 |
-| Property → need → application trace and hard gates | 12 | 10 | 9 | 8 |
-| China–US–EU regulation and claim boundaries | 12 | 9 | 5 | 5 |
+| Property → need → application trace and hard gates | 12 | 10 | 9 | 9 |
+| China–US–EU regulation and claim boundaries | 12 | 9 | 10 | 9 |
 | Formulation, process, use amount, storage and failure modes | 12 | 10 | 9 | 7 |
-| Company/SKU adoption and customer coverage audit | 14 | 6 | 5 | 7 |
+| Company/SKU adoption and customer coverage audit | 14 | 9 | 8 | 9 |
 | Technical/human/claim/consumer/commercial separation | 12 | 10 | 7 | 8 |
 | Comparable price, use amount and use cost | 10 | 9 | 5 | 2 |
-| Executable validation and customer actions | 8 | 8 | 7 | 8 |
-| **Raw total** | **100** | **79** | **63** | **61** |
+| Executable validation and customer actions | 8 | 8 | 8 | 8 |
+| **Raw total** | **100** | **82** | **72** | **68** |
 
 ## Hard-gate review
 
 | Gate | Isomalt | Gellan gum | HMO |
 |---|---|---|---|
 | Exact identity | met | met; HA/LA distinction retained | met; family members separated |
-| Core target-market regulation | conditional; China verified, US unresolved | **not met**; China exact category/use rows absent | **not met**; China molecule/source/use matrix absent |
+| Core target-market regulation | conditional; China verified, US unresolved | met/conditional; China target categories and US route exact, EU flavoured-drink route exact but SKU classification remains | met/conditional; China six-molecule approval status and three approved molecule use rows exact, supplier strains and full US/EU matrix remain |
 | Application has property trace or hypothesis label | met | met/conditional | met/conditional |
-| Company use requires product evidence | met in wording; coverage not reproducible | conditional | conditional |
+| Company use requires product evidence | met in wording and coverage disclosure; complete labels remain unavailable | conditional | conditional |
 | Claims separated from efficacy | met | met | met |
 | Foreseeable adverse-effect search | met | conditional; primarily formulation failure modes | conditional; tolerance separated but original-study coverage incomplete |
 | Consumer-facing education dependency | not decision-critical; appropriately brief | consumer ingredient education not required | applied and decision-relevant |
@@ -56,23 +56,35 @@ The current skill is stricter than parts of the example set. It now requires:
 
 ### Isomalt
 
-1. Define the ten-account SKU universe and record labels checked, inaccessible labels, platforms, dates, and exact ingredient/substitute wording.
-2. Add the complete rule-based checklist required by `research-quality-rules.md`.
-3. Resolve the US legal basis for the exact supplier product before any US recommendation.
-4. Replace illustrative non-sweetener component prices with matched current inputs if total ingredient-cost percentage will drive a decision.
+Completed in the 2026-07-17 revision: defined the ten-account public product/SKU universe, disclosed accessible and inaccessible labels, separated account fit from adoption, documented the US official-search boundary, and added the rule-based completeness check. These evidence/coverage changes raised the report from 75 to 82; prose changes alone received no credit.
+
+Remaining work:
+
+1. Acquire current complete back labels for the priority SKUs; public indexed pages yielded zero decision-grade complete labels.
+2. Resolve the US legal basis for the exact supplier product before any US recommendation.
+3. Obtain matched P2 quotations and replace illustrative non-sweetener component prices if total ingredient-cost percentage will drive a decision.
+4. Add original full-text thermal/hygroscopicity evidence before promoting the donut-glaze hypothesis.
 
 ### Gellan gum
 
-1. Extract exact GB 2760-2024 and EU Annex II rows for each shortlisted beverage/dessert category.
-2. Add row-level citations, methods, reading depth, source locator, and transferability to the property table.
-3. Audit current labels for every P1/P2 account and preserve complete substitute systems.
+Completed in the 2026-07-17 revision: exact China target beverage rows, the US direct-additive route and the EU flavoured-drink route were added; regulatory use language was separated from technical use amount; the ten-account public search universe and its zero-current-label result were disclosed. These evidence and coverage changes removed the core-regulation cap and raised the report from 50 to 72; wording changes alone received no credit.
+
+Remaining work:
+
+1. Acquire current complete labels for every P1/P2 account and preserve complete substitute systems.
+2. Confirm the exact EU category for each target SKU rather than assuming every plant beverage is 14.1.4.
+3. Add page/table locators and full-text methods for decision-critical property evidence.
 4. Compare gellan systems with MCC/CMC/carrageenan on matched functional performance and full system cost.
 
 ### HMO
 
-1. Build the supplier-specific `molecule × production source/strain × use × dose × population × jurisdiction` matrix.
+Completed in the 2026-07-17 revision: the China six-molecule announcement status was checked through the cutoff; exact categories and use amounts were added for 2′-FL, LNnT and 3′-SL sodium salt; non-equivalence of LNT/LNnT and 3′/6′-SL was made operational; and the ten-account evidence universe was classified by product, research and buyer-fit signals. These evidence and coverage changes removed the core-China-regulation cap and raised the report from 50 to 68; prose changes alone received no credit.
+
+Remaining work:
+
+1. Build the supplier-specific `molecule × production source/strain × use × dose × population × jurisdiction` matrix, including every Chinese production-strain addendum and full US/EU entries.
 2. Obtain matched industrial RFQs; research-reagent prices must remain excluded.
-3. Rebuild the ten-account table around current regional SKU labels and supplier authorization fit.
+3. Acquire current regional SKU back labels and map them to supplier authorization fit.
 4. Retrieve original full-text clinical evidence for decision-critical tolerance and outcome statements.
 
 ## Portfolio interpretation

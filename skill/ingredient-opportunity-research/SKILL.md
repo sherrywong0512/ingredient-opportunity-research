@@ -150,6 +150,8 @@ Create interview questions, KA cards, presentation outlines, or other artifacts 
 
 When evaluating or revising this skill itself, use [test-scenarios.md](references/test-scenarios.md). Keep research-quality scoring separate from market-opportunity judgment; never turn the evaluation rubric into an ingredient opportunity score.
 
+When improving an existing report or portfolio case, also read [case-improvement.md](references/case-improvement.md). Close decision-readiness blockers before optimizing rubric points or prose, preserve the original evidence boundary, and retain a before/after audit trail.
+
 ## Guardrails
 
 - Use public sources and data tools the user is authorized to access. Never buy credentials, bypass controls, or expose private data.

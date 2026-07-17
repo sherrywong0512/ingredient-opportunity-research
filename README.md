@@ -47,9 +47,9 @@ flowchart LR
 
 | Case | Research problem | What it demonstrates | Current evidence status |
 |---|---|---|---|
-| [Isomalt in China bakery](examples/01-isomalt-china-bakery.md) | Application feasibility + 10 potential customers | identity disambiguation, human tolerability, use-cost model, claim boundary | screening-ready; SKU coverage and US route remain incomplete |
-| [Gellan gum in consumer products](examples/02-gellan-gum-consumer-products.md) | Broad application scan + first-account selection | grade-specific functionality, alternatives/co-formulation, conditional account priority | directional; exact China/EU category rows and current labels remain incomplete |
-| [HMO global market](examples/03-hmo-global-market.md) | Molecular-family opportunity + 10 accounts | molecule/source-specific regulation, education burden, conditional customer routing | directional; China molecule/source matrix and industrial quotations remain blockers |
+| [Isomalt in China bakery](examples/01-isomalt-china-bakery.md) | Application feasibility + 10 potential customers | identity disambiguation, human tolerability, use-cost model, claim boundary | 82/100 screening input; public SKU coverage disclosed, complete labels and US route remain incomplete |
+| [Gellan gum in consumer products](examples/02-gellan-gum-consumer-products.md) | Broad application scan + first-account selection | grade-specific functionality, exact core beverage regulation, alternatives/co-formulation, conditional account priority | 72/100 project-screening example; current labels, EU SKU classification and matched system cost remain incomplete |
+| [HMO global market](examples/03-hmo-global-market.md) | Molecular-family opportunity + 10 accounts | China six-molecule status/use matrix, education burden, conditional customer routing | 68/100 project-screening example; supplier strains, full US/EU matrix, current labels and industrial RFQs remain incomplete |
 
 The examples intentionally retain unresolved evidence. They demonstrate how the workflow narrows conclusions when commercial, regulatory, or SKU-level evidence is unavailable. See the [case audit](evaluation/case-audit.md) before using any example as a decision input.
 

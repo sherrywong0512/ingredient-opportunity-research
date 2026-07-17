@@ -18,6 +18,10 @@ Apply hard gates first. A report cannot pass if it:
 - recommends a consumer-facing route for an unfamiliar ingredient without assessing awareness and education burden;
 - uses inconsistent or literal translated terminology that changes identity, regulation, technical meaning or claim strength.
 
+When the task is to improve an existing case, apply [case-improvement.md](case-improvement.md). Score increases must trace to new evidence, reproducible coverage, or an executable decision-closing action; prose expansion alone does not increase research quality.
+
+For a revised case, require a short score-change ledger: prior score/cap, new evidence or coverage, gate change, dimension change, new score/cap, and remaining blocker. A missing approval notice, inaccessible label, or absent quotation may improve audit completeness but must not be scored as positive market evidence.
+
 Also audit every applicable rule in [research-quality-rules.md](research-quality-rules.md). An unmet rule must be shown as not met or conditional; the analyst may not silently waive it. The scoring rubric below is secondary to these decision-readiness rules.
 
 Then score research quality out of 100:

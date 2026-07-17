@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ingredient Opportunity Research"
+  short_description: "Evidence-led ingredient opportunity and customer discovery"
+  default_prompt: "Use $ingredient-opportunity-research to assess an ingredient opportunity and identify evidence-backed potential customers."

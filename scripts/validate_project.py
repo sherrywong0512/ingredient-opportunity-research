@@ -193,11 +193,27 @@ for audit_name, (audit_section, markers) in required_by_section.items():
             fail(f"bisabolol {audit_name} audit lacks required marker: {marker}")
 
 readme = (ROOT / "README.md").read_text(encoding="utf-8")
+prd = (ROOT / "docs" / "PRD.md").read_text(encoding="utf-8")
 case_audit = (ROOT / "evaluation" / "case-audit.md").read_text(encoding="utf-8")
 if "examples/04-bisabolol-china-skincare.md" not in readme:
     fail("README does not register the bisabolol case")
 if "Bisabolol pre-audit" not in case_audit:
     fail("case audit does not register the bisabolol pre-audit")
+
+for marker in (
+    "化工企业战略发展部",
+    "一票否决项",
+    "证据台账",
+    "可执行验证清单",
+    "工艺开发",
+    "生产成本",
+    "真实成交价",
+    "80%–90%",
+    "用户报告的初步结果",
+    "可组合战略分析工具",
+):
+    if marker not in prd:
+        fail(f"PRD lacks confirmed product input or evidence boundary: {marker}")
 
 controlled = ROOT / "evaluation" / "controlled-test"
 controlled_readme = (controlled / "README.md").read_text(encoding="utf-8")

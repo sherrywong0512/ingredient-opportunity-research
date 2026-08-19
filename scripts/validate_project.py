@@ -11,6 +11,7 @@ SKILL = ROOT / "skill" / "ingredient-opportunity-research"
 
 REQUIRED = [
     ROOT / "README.md",
+    ROOT / "docs" / "PRD.md",
     ROOT / "docs" / "product-case-study.md",
     SKILL / "SKILL.md",
     SKILL / "agents" / "openai.yaml",

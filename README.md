@@ -45,7 +45,7 @@ flowchart LR
 2. **报告可以不完整，但不能假装完整。** 无法对齐的数据输出 `not reliably estimable`，并给出最小补证动作。
 3. **产品形态先于市场规模和客户名单。** “舒缓护肤”“烘焙”“饮料”不是可销售形态，必须落到基质、工艺、包装、用量、宣称和买家。
 
-完整的产品假设、决策链、需求拆解和取舍见 [产品案例说明](docs/product-case-study.md)。
+完整的产品需求见 [产品需求文档（PRD）](docs/PRD.md)；问题形成过程、决策链和设计取舍见 [产品案例说明](docs/product-case-study.md)。
 
 ### 我的职责与 AI 协作边界
 
@@ -96,6 +96,7 @@ flowchart LR
 ```text
 .
 ├── skill/ingredient-opportunity-research/  # 可安装 Skill 与按需加载的 references
+├── docs/PRD.md                             # 用户、需求、AI 机制、指标与验收标准
 ├── docs/product-case-study.md              # 产品问题、用户、需求与设计取舍
 ├── examples/                               # 四个证据边界不同的案例
 ├── evaluation/

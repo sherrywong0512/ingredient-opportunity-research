@@ -1,101 +1,127 @@
 # Ingredient Opportunity Research
 
-An evidence-led Codex skill for turning ingredient science into downstream application hypotheses, regulatory gates, formulation economics, and auditable B2B customer discovery.
+> 一个面向消费品原料团队的证据型研究 Skill：把“这个原料看起来有市场”转化为“哪个产品形态值得验证、证据缺口在哪里、下一步该做什么”。
 
-中文简介：这是一个面向消费品原料销售团队的研究工作流。它不会替行业专家替市场机会打分，而是把“原料特性 → 产品需求 → 应用硬门槛 → 产品采用 → 客户行动”整理成可复核的证据链。
+## 30 秒看懂这个产品
 
-## Why this project exists
+| 产品问题 | 我的回答 |
+|---|---|
+| 首要用户假设 | 需要决定是否继续投入的原料业务负责人；销售、应用研发和市场是协作者 |
+| 他们要做什么决定 | 选择应用、判断是否继续投入、寻找客户、设计最小验证 |
+| 原有流程哪里失效 | 市场报告、论文、专利、产品标签和供应商材料口径混杂，容易把“可能”写成“已验证” |
+| 核心方案 | 建立 `原料身份 → 特性 → 产品问题 → 硬门槛 → 产品形态 → 采用证据 → 客户行动` 的可审计链路 |
+| 产品原则 | 先阻止错误决策，再追求完整报告；未知不自动变成中性结论 |
+| 当前验证状态 | 结构校验通过；3 个历史案例完成质量审计；1 个新案例用于验证新版规则；受控对照只证明有限场景表现，不代替真实商业验证 |
 
-Generic market research often starts with attractive categories and works backward to justify an ingredient. That creates predictable errors: confusing similarly named materials, transferring one jurisdiction's approval to another, treating a patent as commercial adoption, using public listing prices as transaction prices, or recommending a formulation before checking failure modes.
+## 我从案例审计中识别的问题假设
 
-This project reverses that sequence:
+原料机会研究最危险的结果不是“信息不够多”，而是把不同层级的证据拼成一个看似确定的商业结论。例如：
+
+- 把同名原料、不同纯度、菌株、来源或牌号当成同一个产品；
+- 把论文里的机制、专利示例或法规允许，写成成品人体功效；
+- 把产能、推荐摄入缺口、低渗透率或询盘直接写成市场缺口；
+- 把品牌属于某个品类，写成它正在使用或准备采购该原料；
+- 用零售挂牌价、不同规格报价推断成交价格和下降趋势。
+
+这些模式在仓库案例审计中反复出现，可能让团队过早承诺市场、配方或客户。因此我把首要产品问题定义为**决策质量**，而不是生成更长的行业报告。它们仍是待真实用户访谈验证的问题假设；当前仓库没有错误频率、损失规模或采用数据。
+
+## 我的产品判断
+
+我没有把它设计成“自动找热门应用”的提示词，而是做成一个带硬门槛的决策工作流：
 
 ```mermaid
 flowchart LR
-    A[Exact ingredient identity] --> B[Measured properties and risks]
-    B --> C[Product need and application]
-    C --> D[Regulatory and technical gates]
-    D --> E[Use amount and cost-in-use]
-    E --> F[SKU adoption evidence]
-    F --> G[Qualified customer actions]
+    A[锁定原料身份与规格] --> B[验证特性和失败模式]
+    B --> C[连接真实产品问题]
+    C --> D[法规/技术/用量/成本硬门槛]
+    D --> E[筛选具体产品形态]
+    E --> F[验证SKU采用与需求]
+    F --> G[形成客户行动或停止条件]
 ```
 
-## What the skill does
+三项关键取舍：
 
-- distinguishes material identity, grade, source, molecule, strain, and jurisdiction;
-- traces each proposed application to measured properties or labels it as a hypothesis;
-- audits China, the United States, and the European Union in one category-specific table for food ingredients;
-- validates formulation, process, storage, sensory, safety, and failure modes using original literature where possible;
-- separates public price signals, formal quotations, shipment estimates, and transactions;
-- calculates ingredient-system and finished-product ingredient-cost changes without calling them total manufacturing cost;
-- verifies current use at SKU level and keeps adoption status separate from buyer fit;
-- produces a Markdown feasibility report first, then optional customer lists, interview guides, KA cards, or presentation outlines.
+1. **不用一个“机会分数”掩盖不同风险。** 法规、技术、需求和证据状态分别表达。
+2. **报告可以不完整，但不能假装完整。** 无法对齐的数据输出 `not reliably estimable`，并给出最小补证动作。
+3. **产品形态先于市场规模和客户名单。** “舒缓护肤”“烘焙”“饮料”不是可销售形态，必须落到基质、工艺、包装、用量、宣称和买家。
+
+完整的产品假设、决策链、需求拆解和取舍见 [产品案例说明](docs/product-case-study.md)。
+
+### 我的职责与 AI 协作边界
+
+- 我负责定义决策问题、证据边界、工作流架构、案例审计方法、测试设计和保留/修复规则；
+- AI 用于公开资料研究、初稿生成、受控测试和独立审查；
+- 当前没有行业专家参与盲评，也没有证据证明真实销售、立项或投资回报改善；
+- 因此本项目最可信的能力证明是研究工作流设计、风险建模和评测迭代，而不是商业结果。
+
+## 我如何验证它是否好用
+
+我把“好用”拆成四层，避免用一个验证脚本冒充产品效果：
+
+| 层级 | 验证问题 | 当前证据 | 能证明什么 | 不能证明什么 |
+|---|---|---|---|---|
+| 结构验证 | Skill 是否完整、链接是否有效、案例是否包含必要章节 | `python3 scripts/validate_project.py` | 文件和输出契约可执行 | 事实正确或商业有效 |
+| 案例审计 | 工作流能否暴露身份、法规、技术、采用和价格缺口 | Isomalt 82、Gellan gum 72、HMO 68；内部研究质量自审 | 输出质量和缺口可见 | 事实准确、机会优劣、外部专家评分或 Skill 因果提升 |
+| 受控对照 | 相同证据包下，Skill 是否提高审计显式性和行动可执行性 | [FermaDHA-X 对照测试](evaluation/controlled-test/README.md) | 一个冻结场景中的流程差异 | 跨模型、跨行业、硬失败减少或真实成交效果 |
+| 业务验证 | 报告是否帮助专家更快做出更安全的下一步决定 | 尚未完成 | 真实用户价值 | 当前仓库不能声称已验证 |
+
+详细量表、硬门槛和案例剩余缺口见 [案例质量审计](evaluation/case-audit.md)。
+
+## 我如何发现问题并修复
+
+每次修改都保留 `问题信号 → 假设 → 最小修改 → 检查 → 保留/回退`。前四轮主要是规则设计与案例回归检查；只有第 5、6 轮有同输入对照，不把规则符合性检查冒充因果验证。
+
+| 问题信号 | 根因判断 | 产品修改 | 如何验证 |
+|---|---|---|---|
+| 应用停留在“舒缓护肤”等大类 | 类目规模不能直接指导配方或客户 | 新增产品形态筛选：基质、工艺、包装、接触方式、用量、宣称、替代品和买家 | Bisabolol 案例必须逐形态给出结果和决定性缺口 |
+| 供应商称全球需求 500–800 吨 | 单一利益相关方数字被当成市场事实 | 新增供给、贸易、下游使用三视角和来源独立性检查 | 无独立闭环时必须输出不可可靠估计 |
+| 低渗透率、营养缺口、RFQ 被写成供需缺口 | 需求成熟度与供应约束被合并 | 新增 demand maturity、supply constraint、evidence status 三轴 | 对抗用例禁止把非约束询盘写成 committed demand |
+| 不同来源、规格和条款价格被拿来算降价 | 比较对象不一致 | 增加同口径价格趋势门槛 | 不匹配快照只能支持价格离散，不能计算降幅 |
+
+完整迭代证据见 [迭代记录](evaluation/iteration-log.md)。这里明确区分：**结构和表达改善不会自动提高证据分数。**
+
+## 案例
+
+| 案例 | 被验证的产品问题 | 当前状态 |
+|---|---|---|
+| [Isomalt：中国烘焙](examples/01-isomalt-china-bakery.md) | 身份混淆、耐受风险、使用成本、10 个探索账户 | 内部质量自审 82/100；非机会分/外部评分，仍缺完整标签和美国法律路径 |
+| [Gellan gum：消费品](examples/02-gellan-gum-consumer-products.md) | HA/LA 牌号、饮料法规、替代体系和客户优先级 | 内部质量自审 72/100；非机会分/外部评分，仍缺当前标签和同口径体系成本 |
+| [HMO：全球市场](examples/03-hmo-global-market.md) | 分子家族、菌株/来源授权、消费者教育和客户路由 | 内部质量自审 68/100；非机会分/外部评分，仍缺完整美欧矩阵和工业 RFQ |
+| [Bisabolol：中国护肤](examples/04-bisabolol-china-skincare.md) | 产品形态、市场需求审计、促渗风险和采用证据 | 预审，尚未 decision-ready，不评分 |
+
+低分或未评分不是失败隐藏，而是产品输出的一部分：它告诉使用者哪里不能继续推断，以及下一步应该购买、询问或实验什么。
 
 ## Repository structure
 
 ```text
 .
-├── skill/ingredient-opportunity-research/  # installable Codex skill
-├── examples/                               # three ingredient research cases
-├── evaluation/case-audit.md                # hard-gate and rubric review
-├── prompts/example-prompts.md              # reproducible usage prompts
-├── scripts/validate_project.py             # dependency-free structure check
-└── .github/workflows/validate.yml           # CI validation
+├── skill/ingredient-opportunity-research/  # 可安装 Skill 与按需加载的 references
+├── docs/product-case-study.md              # 产品问题、用户、需求与设计取舍
+├── examples/                               # 四个证据边界不同的案例
+├── evaluation/
+│   ├── case-audit.md                       # 硬门槛与质量审计
+│   ├── iteration-log.md                    # 问题—修复—验证记录
+│   └── controlled-test/                    # 冻结输入、匿名输出和盲评结果
+├── scripts/validate_project.py             # 无第三方依赖的结构校验
+└── .github/workflows/validate.yml          # GitHub Actions
 ```
-
-## Case studies
-
-| Case | Research problem | What it demonstrates | Current evidence status |
-|---|---|---|---|
-| [Isomalt in China bakery](examples/01-isomalt-china-bakery.md) | Application feasibility + 10 potential customers | identity disambiguation, human tolerability, use-cost model, claim boundary | 82/100 screening input; public SKU coverage disclosed, complete labels and US route remain incomplete |
-| [Gellan gum in consumer products](examples/02-gellan-gum-consumer-products.md) | Broad application scan + first-account selection | grade-specific functionality, exact core beverage regulation, alternatives/co-formulation, conditional account priority | 72/100 project-screening example; current labels, EU SKU classification and matched system cost remain incomplete |
-| [HMO global market](examples/03-hmo-global-market.md) | Molecular-family opportunity + 10 accounts | China six-molecule status/use matrix, education burden, conditional customer routing | 68/100 project-screening example; supplier strains, full US/EU matrix, current labels and industrial RFQs remain incomplete |
-
-The examples intentionally retain unresolved evidence. They demonstrate how the workflow narrows conclusions when commercial, regulatory, or SKU-level evidence is unavailable. See the [case audit](evaluation/case-audit.md) before using any example as a decision input.
 
 ## Install and invoke
 
-Copy `skill/ingredient-opportunity-research` into your Codex skills directory, then invoke:
+将 `skill/ingredient-opportunity-research` 整个目录复制到 Agent 的 Skill 路径；不能只复制 `SKILL.md`，因为详细规则在 `references/` 中。
 
 ```text
-Use $ingredient-opportunity-research to research [ingredient] in [market/application].
-Produce the Markdown feasibility report first, then identify [N] potential customers.
+使用 ingredient-opportunity-research，调研[原料]在[国家/产品领域]的市场机会。
+先输出可行性报告，再根据已验证证据识别[N]个潜在客户。
 ```
 
-For Chinese usage:
-
-```text
-使用 $ingredient-opportunity-research，调研[原料]在[国家/产品领域]的市场机会，
-并找出[N]个潜在客户。先输出Markdown可行性分析报告。
-```
-
-More prompts are in [prompts/example-prompts.md](prompts/example-prompts.md).
-
-## Quality model
-
-Reports are evaluated in two stages:
-
-1. **Hard gates:** identity, core regulation, property traceability, adoption evidence, claim/efficacy separation, adverse-effect search, and language accuracy.
-2. **Research-quality rubric:** a 100-point output-quality assessment covering science, regulation, formulation, price, adoption, customer discovery, and executable validation.
-
-The score measures report quality, never the attractiveness of an ingredient opportunity. An unresolved decision-readiness blocker remains visible even if the narrative is commercially appealing.
-
-## Validate locally
-
-```bash
-python3 scripts/validate_project.py
-```
-
-The check verifies required files, skill frontmatter, local Markdown links, reference targets, and the three example reports.
+更多可复现请求见 [example prompts](prompts/example-prompts.md)。
 
 ## Boundaries
 
-- Public sources do not reveal confidential formulations, supplier relationships, contract prices, or customer intent.
-- Regulatory plausibility is not legal advice or approval.
-- A product label verifies presence, not use amount or causal performance.
-- Patents and supplier application notes are test starting points, not validated production recipes.
-- The consumer-product workflow only partially transfers to industrial-only materials.
-
-## Project maturity
-
-The skill itself is reusable; the three cases are evidence snapshots dated 2026-07-17. Time-sensitive regulation, price, product availability, and company signals must be refreshed before commercial use.
+- 公开资料不能证明保密配方、供应关系、合同价格或采购意图；
+- 原料合法可用不等于成品宣称已经成立；
+- 标签只能证明出现，不能证明添加量、因果功效或商业效果；
+- 专利和供应商应用资料是实验起点，不是生产配方；
+- 所有法规、价格、SKU 和公司信息在商业使用前必须刷新；
+- 本项目支持专家决策，不替代法规、配方、采购或商业负责人。

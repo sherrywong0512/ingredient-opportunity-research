@@ -77,7 +77,48 @@ Treat literature formulations as reference options, not production recipes. Use 
 
 Include a brief conclusion or the full table from `market-awareness-and-education.md` only when ingredient recognition, benefit explanation, trust, claim comprehension, or education effort could materially change this application's positioning, channel, launch cost, or customer decision. Otherwise omit it; novelty alone is not sufficient.
 
-## 6. Leading companies, SKU adoption and observed effects
+### Product-format screen
+
+| Application | Concrete product format | Product need | Ingredient job | Matrix/phase and process fit | Contact/consumption pattern | Evidence/use amount | Regulatory/claim gate | Alternatives | Current SKU adoption | Format market evidence | Buyers | Result/gap |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+
+Keep the finished-product format market, ingredient-addressable output, ingredient demand and supplier-addressable demand separate. Do not convert retail value directly into ingredient tonnage.
+
+## 6. Market size and demand, when decision-relevant
+
+Define the exact measure before giving a number. Keep capacity, production, shipments, sales volume, consumption/demand volume and sales value separate.
+
+| Estimate/source | Exact measure | Ingredient identity/grade | Geography/base year | Method/inputs | Source incentive | Independence | Included/excluded | Result | Evidence status/gap |
+|---|---|---|---|---|---|---|---|---|---|
+
+### Triangulation
+| View | Evidence used | Calculation | Result/range | Limitation | Reconciliation |
+|---|---|---|---|---|---|
+| Supply | | | | | |
+| Trade | | | | | |
+| Downstream use | | | | | |
+
+State `verified estimate`, `corroborated range`, `directional range`, or `not reliably estimable`. Show volume and value separately and disclose every conversion formula.
+
+### Supply-demand gap audit, when the opportunity depends on shortage, low penetration, substitution or capacity
+
+| Application/specification | Demand maturity | Demand evidence/basis | Supply constraint | Supply evidence/basis | Alignment and applicable gates | Calculation/range | Gap conclusion | Evidence status | Invalidation/next evidence |
+|---|---|---|---|---|---|---|---|---|---|
+
+Use the demand-maturity, supply-constraint and evidence-status axes, conclusions and formulas from `market-size-and-demand.md`. Treat non-binding RFQs, LOIs, interviews and price interest as stated buyer interest. Complete the table only when every decision-relevant claim includes all three axes, applicable alignment fields, calculation or reason not to calculate, and an invalidation/next-evidence condition.
+
+### Supplier financial materiality and platform value, when decision-relevant
+
+| View | Inputs and formula | Result | Evidence status | Decision use | Gap |
+|---|---|---|---|---|---|
+| Standalone scenario revenue | Saleable volume × realized price × utilization/sell-through | | | | |
+| Relevant business denominator | Business-unit or group revenue/profit basis | | | | |
+| Demonstrated platform reuse | Shared process, dossier, application, qualification or channel asset | | | | |
+| Adjacent-product hypothesis | Named products and incremental bottleneck/cost | | | | |
+
+Keep scenario revenue separate from a forecast. State scale-up triggers as evidence-derived economics or explicit management choices; do not present an arbitrary order-coverage percentage as an industry rule.
+
+## 7. Leading companies, SKU adoption and observed effects
 
 Coverage: `[company universe] | [relevant SKUs found] | [labels checked] | [channels/markets] | [dates] | [labels inaccessible]`
 
@@ -103,7 +144,7 @@ Claim eligibility is a finished-product legal conclusion, not evidence that the 
 
 Search and report adverse effects, withdrawals, null results, complaints, and negative commercial signals as actively as positive evidence. Use `pass` or the exact gap for each SMART element; do not convert SMART completeness into a numeric opportunity score.
 
-## 7. Raw-material price, use amount and use cost
+## 8. Raw-material price, use amount and use cost
 | Observation | Identity/specification | Quantity and terms | Normalized price | Price evidence band | Date | Limitation |
 |---|---|---|---|---|---|---|
 
@@ -119,7 +160,7 @@ Search and report adverse effects, withdrawals, null results, complaints, and ne
 | Application | Finished-product basis | Incumbent ingredients/amounts/prices | Target ingredients/amounts/prices | Retained/removed/added components | Incumbent system cost | Target system cost | System-cost change | Estimated total ingredient cost before | Estimated total ingredient cost after | Total ingredient-cost change | Sources/assumptions/exclusions | Confidence/gap |
 |---|---|---|---|---|---:|---:|---:|---:|---:|---|---|---|
 
-## 8. Potential customers (when requested)
+## 9. Potential customers (when requested)
 | Account/business unit | Relevant products and SKU coverage | Geography | Why it fits | Observed adoption status/evidence class | Substitute or development evidence | Relevant-unit growth/momentum evidence and scope | Buying/timing signal | Likely role | Priority band/rule | Sources/dates and coverage gap | Next verification |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 
@@ -128,17 +169,17 @@ Search and report adverse effects, withdrawals, null results, complaints, and ne
 | Company | Relevant unit/category/brand | Target-product link | Metric | Scope/geography/channel | Period/comparison basis | Direction and disclosed driver | Source/date | Directness to ingredient demand | Priority implication | Counter-risk | Limitation/next check |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 
-## 9. Risks and evidence gaps
+## 10. Risks and evidence gaps
 | Gap/risk | Why it matters | Current evidence | Validation action | Owner/expert needed |
 |---|---|---|---|---|
 
-## 10. Rule-based research-completeness check
+## 11. Rule-based research-completeness check
 | Rule | Result (met/conditional/not met/not applicable) | Supporting evidence | Exact gap | Effect on conclusion | Next action |
 |---|---|---|---|---|---|
 
 List every applicable rule from `research-quality-rules.md`. These are research-quality controls, not numeric thresholds or an opportunity score.
 
-## 11. Recommended validation sequence
+## 12. Recommended validation sequence
 For every action state: literature-supported starting point; remaining gap; control and variants; measurements and time points; success/failure rule; decision unlocked.
 
 ## Sources

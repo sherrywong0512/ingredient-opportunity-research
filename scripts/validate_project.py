@@ -11,13 +11,25 @@ SKILL = ROOT / "skill" / "ingredient-opportunity-research"
 
 REQUIRED = [
     ROOT / "README.md",
+    ROOT / "docs" / "product-case-study.md",
     SKILL / "SKILL.md",
     SKILL / "agents" / "openai.yaml",
     ROOT / "evaluation" / "case-audit.md",
+    ROOT / "evaluation" / "iteration-log.md",
+    ROOT / "evaluation" / "controlled-test" / "README.md",
+    ROOT / "evaluation" / "controlled-test" / "evidence-pack.md",
+    ROOT / "evaluation" / "controlled-test" / "review-rubric.md",
+    ROOT / "evaluation" / "controlled-test" / "blind-review.md",
+    ROOT / "evaluation" / "controlled-test" / "memo-a.md",
+    ROOT / "evaluation" / "controlled-test" / "memo-b.md",
+    ROOT / "evaluation" / "controlled-test" / "memo-c.md",
     ROOT / "prompts" / "example-prompts.md",
     ROOT / "examples" / "01-isomalt-china-bakery.md",
     ROOT / "examples" / "02-gellan-gum-consumer-products.md",
     ROOT / "examples" / "03-hmo-global-market.md",
+    ROOT / "examples" / "04-bisabolol-china-skincare.md",
+    SKILL / "references" / "market-size-and-demand.md",
+    SKILL / "references" / "product-format-screening.md",
 ]
 
 
@@ -83,5 +95,138 @@ for report in (ROOT / "examples").glob("*.md"):
     if not any(term in text for term in ("完整性", "证据缺口", "最终判断")):
         fail(f"example lacks an evidence-gap/completeness section: {report.name}")
 
-print("PASS: project structure, skill references, local links, and examples validated")
+def section(text: str, heading: str, next_heading: str) -> str:
+    start = text.find(heading)
+    end = text.find(next_heading, start + len(heading))
+    if start < 0 or end < 0:
+        fail(f"bisabolol example lacks section boundary: {heading}")
+    return text[start:end]
+
+
+bisabolol = (ROOT / "examples" / "04-bisabolol-china-skincare.md").read_text(
+    encoding="utf-8"
+)
+format_section = section(bisabolol, "### 5.1 产品形态筛选", "### 5.2")
+market_section = section(bisabolol, "### 9.1 原料市场规模审计", "### 9.2")
+adoption_section = section(bisabolol, "## 8. 可验证的产品采用信号", "## 9.")
+completeness_section = section(bisabolol, "## 12. 研究完整性检查", "## 主要来源")
+
+required_by_section = {
+    "product-format": (
+        format_section,
+        (
+            "基质/工艺与包装",
+            "接触模式",
+            "证据用量",
+            "法规/宣称",
+            "替代方案",
+            "当前采用",
+            "形态市场证据",
+            "买家",
+            "结果/决定性缺口",
+            "`conditional—technical test`",
+            "`conditional—market evidence`",
+            "`regulatory unresolved`",
+            "`do not advance`",
+        ),
+    ),
+    "market-demand": (
+        market_section,
+        (
+            "访问日：",
+            "来源动机",
+            "独立性",
+            "| Supply |",
+            "| Trade |",
+            "| Downstream use |",
+            "敏感性",
+            "not reliably estimable from available evidence",
+        ),
+    ),
+    "adoption": (
+        adoption_section,
+        (
+            "便利样本",
+            "纳入规则",
+            "渠道仅含品牌官网",
+            "证据类/观察日",
+            "交叉佐证",
+            "当前在售状态",
+            "possible use",
+            "unclassified single-source official-page evidence",
+        ),
+    ),
+    "completeness": (
+        completeness_section,
+        (
+            "| 规则 | 结果 | 支持证据 | 精确缺口 | 对结论的影响 | 下一步 |",
+            "Research contract",
+            "Generalization",
+            "Ingredient identity",
+            "Ingredient properties and sources",
+            "Property-to-application map",
+            "Functional equivalents",
+            "Replacement/co-formulation economics",
+            "Product-format screening",
+            "Regulation and claims",
+            "Raw-material price",
+            "Market size and demand",
+            "Use amount and cost",
+            "Application-case/use amount",
+            "Technical/literature validation",
+            "Product/company adoption",
+            "SKU universe/current sale",
+            "Effects and adverse evidence",
+            "SMART consumer/commercial evidence",
+            "Market awareness/education",
+            "Target-language terminology",
+            "Potential customers/KA priority",
+            "Final report integrity",
+            "Decision-readiness blockers",
+        ),
+    ),
+}
+for audit_name, (audit_section, markers) in required_by_section.items():
+    for marker in markers:
+        if marker not in audit_section:
+            fail(f"bisabolol {audit_name} audit lacks required marker: {marker}")
+
+readme = (ROOT / "README.md").read_text(encoding="utf-8")
+case_audit = (ROOT / "evaluation" / "case-audit.md").read_text(encoding="utf-8")
+if "examples/04-bisabolol-china-skincare.md" not in readme:
+    fail("README does not register the bisabolol case")
+if "Bisabolol pre-audit" not in case_audit:
+    fail("case audit does not register the bisabolol pre-audit")
+
+controlled = ROOT / "evaluation" / "controlled-test"
+controlled_readme = (controlled / "README.md").read_text(encoding="utf-8")
+blind_review = (controlled / "blind-review.md").read_text(encoding="utf-8")
+memo_c = (controlled / "memo-c.md").read_text(encoding="utf-8")
+for marker in (
+    "No Skill | 96/100",
+    "Skill before repair | 99/100",
+    "Skill after one-rule repair | 100/100",
+    "not an unbiased market benchmark",
+):
+    if marker not in controlled_readme:
+        fail(f"controlled-test README lacks evidence boundary: {marker}")
+for marker in ("96/100", "99/100", "100/100", "Hard failures: none"):
+    if marker not in blind_review:
+        fail(f"blind review lacks required result: {marker}")
+for marker in (
+    "活性规格",
+    "数量",
+    "日期",
+    "税费",
+    "运费/Incoterms",
+    "付款条件",
+    "供应商类型",
+):
+    if marker not in memo_c:
+        fail(f"repaired memo lacks named price mismatch: {marker}")
+
+print(
+    "PASS: project structure, skill references, local links, examples, and "
+    "controlled-test evidence validated"
+)
 sys.exit(0)

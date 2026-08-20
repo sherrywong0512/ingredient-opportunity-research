@@ -20,6 +20,8 @@ Test whether `ingredient-opportunity-research` changes decision-process quality 
 
 The groups run in separate Agent sessions. They share the same model family and are not statistically independent model samples. The benchmark author designed the evidence packs from known failure modes, so the benchmark is intentionally adversarial and Skill-relevant. The reviewer is another Agent from the same model family. These constraints make the result workflow evidence, not proof of general model superiority.
 
+The anonymous outputs were committed before review, but condition mappings were not precommitted or hash-committed. Published group identity relies on the author's post-review record and cannot independently exclude reassignment.
+
 ## Cases
 
 | Case | Decision | Primary failure modes |

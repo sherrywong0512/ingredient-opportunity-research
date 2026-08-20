@@ -54,3 +54,5 @@ These gates support only descriptive claims about this synthetic, adversarial fi
 - Facts and rubrics were designed from known Skill failure modes, so the benchmark is Skill-relevant rather than neutral.
 - A model-family reviewer is not a chemical-industry expert.
 - Repetition measures output variation under these sessions, not full production variance.
+- The anonymous outputs were committed before scoring, but the condition/run mapping was not precommitted or hash-committed. The published mapping therefore relies on the author's post-review record and cannot independently exclude reassignment after scoring. A future run must commit a salted mapping hash before review and reveal the salt afterward.
+- The one-sentence user prompts and facts packs are frozen, but the exact word-for-word harness instruction, serving model version and sampling parameters were not recorded. The statistics are reproducible from saved outputs; generation is not independently reproducible. Future runs must freeze those fields before execution.

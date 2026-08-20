@@ -46,3 +46,4 @@ The returned final memos were preserved without substantive editing. Only anonym
 - The reviewer belongs to the same model family and is not a human domain expert.
 - Synthetic packs test workflow behavior, not factual retrieval accuracy or real-market prediction.
 - One run per condition does not estimate variance.
+- Condition mappings were not precommitted or hash-committed before scoring. They are author-recorded post-review disclosures, so third parties can recalculate the published scores but cannot independently exclude post-score reassignment.

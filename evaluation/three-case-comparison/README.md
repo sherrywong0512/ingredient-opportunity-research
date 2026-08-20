@@ -24,9 +24,11 @@ The Direct group was already strong and made the same safe headline decision in 
 
 ## Portfolio interpretation
 
-Supported claim:
+Supported claim, using the author-recorded post-review group mapping:
 
 > In three preregistered synthetic decision cases, the Skill condition scored 298/300 versus 283/300 for the same-model Direct condition, a descriptive mean difference of +5.0 points. Both groups avoided all hard failures; the Skill's advantage was audit completeness and actionability rather than a different headline decision.
+
+The anonymous outputs were committed before scoring, but the condition mapping was not precommitted or hash-committed. The score difference is therefore not independently auditable against post-score reassignment.
 
 Unsupported claims:
 

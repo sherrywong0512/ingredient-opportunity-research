@@ -9,8 +9,13 @@
 | Isomalt — China bakery | 82 | none | **82/100** | complete current labels remain inaccessible; US legal route unresolved |
 | Gellan gum — consumer products | 72 | none | **72/100** | current complete SKU labels, matched system cost and EU SKU classification remain unresolved |
 | HMO — global market | 68 | none | **68/100** | supplier-strain applicability, current complete labels, full US/EU matrix and industrial RFQs remain incomplete |
+| Bisabolol — China skincare | not scored | pre-audit | **not yet decision-ready** | exact supplier grade, independent demand triangulation, complete SKU corroboration and matched RFQs remain incomplete |
 
-Interpretation: all three reports are suitable for project screening with stated gaps; none replaces supplier-specific regulatory review, formulation validation or procurement evidence.
+Interpretation: the first three reports are scored project-screening examples
+with stated gaps. The bisabolol report is registered as a pre-audit example and
+must not inherit a score merely because its structure validates. None replaces
+supplier-specific regulatory review, formulation validation or procurement
+evidence.
 
 ## Rubric breakdown
 
@@ -51,6 +56,26 @@ The current skill is stricter than parts of the example set. It now requires:
 - application cases with the original use-amount denominator;
 - incumbent-versus-target ingredient-system cost and, when supportable, total ingredient-cost change;
 - a rule-by-rule completeness check rather than an opaque opportunity score.
+
+## Bisabolol pre-audit — 2026-07-28
+
+No rubric score is assigned yet. The case is retained to test the newer
+product-format and market-demand protocols, with this explicit audit trail:
+
+- product formats are separated by matrix, process, exposure, package, buyers
+  and standard result labels;
+- the 500–800 tonne supplier statement is quarantined rather than promoted to
+  a market estimate;
+- supply, trade and downstream-use views are shown separately, and both global
+  and China demand are marked not reliably estimable;
+- current SKU evidence remains single-source and incomplete, so it cannot
+  establish penetration, supplier identity, use amount or customer intent.
+
+Before scoring, retrieve decision-critical full texts and exact methods, obtain
+A1/A2 SKU evidence and current-sale checks, complete supplier-grade regulatory
+checks, and obtain comparable RFQs. The structural property, adoption and
+rule-by-rule tables are now present, but unmet evidence remains unmet; prose
+changes alone receive no credit.
 
 ## Upgrade backlog
 

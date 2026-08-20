@@ -8,8 +8,10 @@ Use these rules before delivering a feasibility report. They formalize what evid
 - Generalization rule
 - Ingredient properties and sources
 - Property-to-application map
+- Product-format screening
 - Food regulation and claims
 - Raw-material price evidence
+- Market size and demand evidence
 - Use amount and use cost
 - Technical and literature validation
 - Product and company adoption
@@ -63,6 +65,17 @@ If evidence is inaccessible or the available universe is small, disclose that li
 - For replacement or co-formulation economics, compare incumbent and target ingredient systems on the same finished-product and functional-performance basis. Show retained, removed, reduced, and added components and calculate the ingredient-system cost change.
 - When the relevant formulation and comparable price bases are available or transparently estimated, calculate estimated total ingredient cost before and after and show the absolute and percentage change. Keep this separate from packaging, processing, labor, energy, depreciation, logistics, compliance, testing, and total manufacturing cost.
 
+## Product-Format Screening
+
+- Translate every shortlisted application into concrete saleable formats before estimating demand, recommending experiments or selecting customers. A broad benefit, category or use occasion is not a product format.
+- For each format, report the product need, ingredient job, matrix/phase, process, contact or consumption mode, pack/dose basis, evidence use amount, regulatory/claim route, alternatives, current SKU adoption, format-level market evidence, buyers and decisive gap.
+- Do not include a format merely because the ingredient can be added. Require an observable need, plausible retained function and identifiable buyer market.
+- Keep parent-category market, format commercial pool, ingredient-addressable output, ingredient demand and supplier-addressable demand separate.
+- Do not allocate parent-market value using an unsupported format share or apply one channel's share to the total market without representativeness evidence.
+- Label platform GMV, retail-panel sales, filings, launch counts, units and production volumes by their exact measure and coverage. Filing/launch activity is not sales; bundles cannot be assigned to component formats without a method.
+- Do not convert retail value directly to ingredient volume. Show unit volume, average net content, adoption, use amount, active concentration, losses and formulas; otherwise mark ingredient demand not reliably estimable.
+- Every priority format requires a format-specific validation matrix, incumbent control, amount ladder, process/packaging conditions, endpoints and success/failure rule.
+
 ## Food Regulation and Claims
 
 - Unless the user limits geography, audit China, the United States, and the European Union together.
@@ -79,6 +92,26 @@ If evidence is inaccessible or the available universe is small, disclose that li
 - A transaction is a benchmark only for its stated terms; it is not automatically the market price.
 - Report the observation count, range or individual values, central tendency when meaningful, dates, and terms. Investigate material outliers using identity, grade, quantity, geography, tax, freight, and channel differences rather than an arbitrary percentage cutoff.
 - Refresh prices when their age or market volatility could change the decision. State the refresh basis instead of using one universal expiry period.
+- Support a price trend with comparable time-series observations. Unmatched routes, grades, natural-status claims, quantities, geographies or terms support price dispersion only, not a calculated decline.
+
+## Market Size and Demand Evidence
+
+- Define the exact measure, ingredient identity/grade, geography, period, unit and value-chain level before reporting market size or growth. Keep capacity, production, shipments, sales volume, consumption/demand volume, inventory and sales value separate.
+- Triangulate supply, trade and downstream-use views when the number affects the decision. If one view is unavailable, disclose it and narrow the conclusion rather than substituting an opaque report.
+- Capacity is not production or demand; planned capacity and sales targets are not actual sales. Flexible multi-product capacity requires an allocation basis.
+- Confirm whether customs codes uniquely identify the ingredient. When they do not, search names, CAS numbers, trade names and counterparties at shipment level and disclose residual contamination and missing domestic trade.
+- A downstream estimate must show finished-product output, adoption share, inclusion rate, active concentration, losses and formulas. Ingredient-list order does not establish inclusion rate.
+- Trace repeated figures to their earliest discoverable source. Sources sharing the same unattributed number or assumptions are one evidence chain, not independent corroboration.
+- Reconcile disagreement through scope, grade, route, period, geography, price level, concentration, inventory, re-export, utilization and source incentives. Do not average incompatible estimates.
+- Check that volume, comparable realized price and value are arithmetically coherent and compatible with supply capacity and downstream use. Quarantine unexplained order-of-magnitude contradictions.
+- Classify the result as verified estimate, corroborated range, directional range, or not reliably estimable. Show base year, access date, volume/value separately, formulas, sensitivity, exclusions and next evidence needed.
+- A forecast requires a traceable base value, period, method and scenario assumptions. TAM must be narrowed for regulation, saleable grade, geography, application fit and plausible adoption before it becomes supplier-addressable demand.
+- When shortage, unmet demand, low penetration, substitution or new capacity supports the opportunity conclusion, apply the demand-maturity, supply-constraint and evidence-status axes plus the gap-specific alignment fields in [market-size-and-demand.md](market-size-and-demand.md). Treat non-binding RFQs, LOIs, interviews and price interest as stated buyer interest rather than committed demand.
+- Calculate a commercial gap only from aligned effective supply and demand using non-overlapping components. Otherwise report the applicable latent need, directional mismatch, scenario whitespace or `not reliably estimable` conclusion from [market-size-and-demand.md](market-size-and-demand.md).
+- Treat two matching or arithmetically compatible market numbers as corroboration only after verifying independent provenance and aligned definitions; repeated or producer-seeded estimates remain one evidence chain.
+- When supplier financial relevance affects the decision, show standalone scenario revenue from saleable volume, realized price and utilization or sell-through, compare it with the relevant business denominator, and keep the result separate from a forecast.
+- When platform or portfolio value affects the decision, identify the exact reusable assets and named adjacent products, then separate demonstrated reuse from strategic hypothesis. Do not assign a portfolio revenue scale without product-level demand and economics.
+- Derive scale-up triggers from supplier economics, qualification lead time, committed or probability-weighted demand, flexible-capacity alternatives and downside tolerance. Label unevidenced trigger percentages as management choices, not research findings.
 
 ## Use Amount and Use Cost
 
@@ -165,5 +198,9 @@ The report is not decision-ready when it relies on any of the following:
 - use cost without use amount, finished-product basis, price basis, and formula;
 - a human/use conclusion that omits foreseeable adverse effects;
 - potential-customer status without source date and disclosed search/SKU coverage.
+- a decision-critical market-size or growth claim that conflates capacity, production, demand or sales value, lacks a defined base year/method, or relies on an opaque/repeated estimate without disclosed uncertainty;
+- a shortage, unmet-demand, low-penetration, substitution or capacity claim presented as a commercial supply-demand gap without separate demand-maturity, supply-constraint and evidence-status classifications, gap-relevant aligned inputs, non-overlapping calculation and invalidation/next-evidence condition;
+- non-binding RFQs, LOIs, interviews, price interest, low penetration or an incumbent pool presented as committed unmet demand;
+- a shortlisted application that remains a broad category without a concrete product-format screen, or whose format retail value is presented as ingredient-addressable demand without adoption and use-amount evidence;
 - a consumer-facing recommendation whose success materially depends on ingredient recognition, trust, or claim comprehension but does not assess that dependency;
 - a Chinese or bilingual report whose decision-critical terminology is inconsistent, stronger than the source, or not traceable to the original term.

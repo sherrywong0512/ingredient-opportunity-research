@@ -31,6 +31,10 @@ Choose sample, pilot, initial-commercial, and scaled-purchase quantities that ma
 5. Refresh quotes when age or market volatility could change the decision; state the chosen cadence and reason.
 6. Calculate finished-product ingredient-use cost at a realistic use amount and yield. Keep formulation cost, processing loss, logistics, testing, and claim costs separate.
 
+Infer a price trend only from comparable observations across time. Do not calculate a decline from unmatched routes, natural-status claims, grades, quantities, geographies, supplier types, currencies, or commercial terms. When only unmatched snapshots exist, report price dispersion and its likely specification or channel drivers, not a percentage decline or a claim that price competition has begun.
+
+When price affects a commercial or capital decision, do not stop at `prices are not comparable`. Name the decision-blocking mismatches—such as identity or active basis, quantity, date, currency, tax, freight/Incoterms, payment terms and supplier type—and state the smallest normalized RFQ or transaction evidence needed to resolve them. Keep this concise in a decision memo, but make the missing comparison fields explicit.
+
 ## Calculate Use Amount and Use Cost
 
 For each priority application, keep four quantities separate:

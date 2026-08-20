@@ -20,6 +20,10 @@ Use one property claim per row. If several sources support a claim, identify whi
 
 Keep source reliability separate from claim confidence. Several low-quality sources repeating one claim do not raise its evidence level.
 
+Treat numerical agreement as corroboration only after tracing source independence and aligning the metric, identity, grade, geography, period, value-chain level, and price basis. A producer estimate and a review or market report that repeats or is arithmetically compatible with that estimate remain one evidence chain until independence is shown.
+
+Decompose compound company claims before assigning confidence. Verify production route, purity, scale, capacity, customer qualification, order receipt, current sales, and financial contribution as separate claims; a filing that supports one part does not confirm the others. Treat company websites, investor replies, speeches, and public-account articles as attributable company statements unless an audited filing, permit, customer evidence, transaction, or reproducible technical record corroborates the exact claim.
+
 For literature, reading depth is not evidence quality. A full supplier brochure remains interested evidence; an abstract of a strong randomized trial remains abstract-only. Report both dimensions.
 
 Do not write `studies show`, `research indicates`, or an uncited property adjective such as `stable`, `low hygroscopicity`, or `well tolerated`. Replace it with the measured observation and its test conditions, or label it `unverified claim`.

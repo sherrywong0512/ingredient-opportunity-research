@@ -1,0 +1,28 @@
+case,criterion,weight,direct_score,skill_score,direct_hard_failure,skill_hard_failure
+FermaDHA-X,Identity and scope separation,12,12,12,false,false
+FermaDHA-X,Demand-signal maturity,14,14,14,false,false
+FermaDHA-X,Capacity production sales inventory and saleable supply,14,14,14,false,false
+FermaDHA-X,Alignment before gap calculation,14,14,14,false,false
+FermaDHA-X,Duplicate and non-binding inquiries,10,10,10,false,false
+FermaDHA-X,Price comparability,8,5,8,false,false
+FermaDHA-X,Regulatory technical and qualification blockers,10,10,10,false,false
+FermaDHA-X,Bounded capital recommendation,10,10,10,false,false
+FermaDHA-X,Decision-changing validation,8,7,8,false,false
+MycoPro-PV9,Exact strain identity and transfer limits,14,14,14,false,false
+MycoPro-PV9,Species life-stage and long-term separation,12,12,12,false,false
+MycoPro-PV9,Legal routes by product country and use,14,14,14,false,false
+MycoPro-PV9,Study application and adverse/null evidence,12,10,11,false,false
+MycoPro-PV9,Market value and non-binding letters,10,8,10,false,false
+MycoPro-PV9,Digestible-protein and formula economics,12,12,12,false,false
+MycoPro-PV9,Nameplate qualification and saleable output,8,4,8,false,false
+MycoPro-PV9,Evidence-consistent scale decision,10,10,10,false,false
+MycoPro-PV9,Validation and stop conditions,8,8,8,false,false
+DermaBis-A95,Identity route assay and stereochemistry,12,10,12,false,false
+DermaBis-A95,Technical human and commercial evidence separation,12,12,12,false,false
+DermaBis-A95,China regulation and claim boundaries,12,12,12,false,false
+DermaBis-A95,Product-format screening,14,14,14,false,false
+DermaBis-A95,SKU coverage and adoption,10,10,10,false,false
+DermaBis-A95,Market-size evidence,10,8,10,false,false
+DermaBis-A95,Price normalization and internal cost veto,12,12,12,false,false
+DermaBis-A95,Evidence-consistent capital decision,10,10,10,false,false
+DermaBis-A95,Shared-line RFQ and format validation,8,7,7,false,false

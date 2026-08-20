@@ -2,6 +2,7 @@
 """Dependency-free structural validation for this portfolio repository."""
 
 from pathlib import Path
+import csv
 import re
 import sys
 
@@ -24,6 +25,11 @@ REQUIRED = [
     ROOT / "evaluation" / "controlled-test" / "memo-a.md",
     ROOT / "evaluation" / "controlled-test" / "memo-b.md",
     ROOT / "evaluation" / "controlled-test" / "memo-c.md",
+    ROOT / "evaluation" / "three-case-comparison" / "README.md",
+    ROOT / "evaluation" / "three-case-comparison" / "protocol.md",
+    ROOT / "evaluation" / "three-case-comparison" / "run-log.md",
+    ROOT / "evaluation" / "three-case-comparison" / "scores.csv",
+    ROOT / "evaluation" / "three-case-comparison" / "case-01-fermadhax" / "README.md",
     ROOT / "prompts" / "example-prompts.md",
     ROOT / "examples" / "01-isomalt-china-bakery.md",
     ROOT / "examples" / "02-gellan-gum-consumer-products.md",
@@ -242,8 +248,70 @@ for marker in (
     if marker not in memo_c:
         fail(f"repaired memo lacks named price mismatch: {marker}")
 
+comparison = ROOT / "evaluation" / "three-case-comparison"
+for case_name in ("case-02-mycopro-pv9", "case-03-dermabis-a95"):
+    for filename in (
+        "evidence-pack.md",
+        "rubric.md",
+        "memo-a.md",
+        "memo-b.md",
+        "blind-review.md",
+        "group-key.md",
+    ):
+        path = comparison / case_name / filename
+        if not path.is_file():
+            fail(f"three-case comparison lacks {case_name}/{filename}")
+
+comparison_readme = (comparison / "README.md").read_text(encoding="utf-8")
+protocol = (comparison / "protocol.md").read_text(encoding="utf-8")
+run_log = (comparison / "run-log.md").read_text(encoding="utf-8")
+for marker in (
+    "Direct | Skill | Delta",
+    "**283**",
+    "**298**",
+    "**94.3**",
+    "**99.3**",
+    "Both groups avoided all hard failures",
+    "Unsupported claims",
+):
+    if marker not in comparison_readme:
+        fail(f"three-case comparison README lacks result/boundary: {marker}")
+for marker in (
+    "Every case is synthetic",
+    "If Group Direct equals or beats Group Skill",
+    "not proof of general model superiority",
+):
+    if marker not in protocol:
+        fail(f"three-case protocol lacks preregistered boundary: {marker}")
+for marker in (
+    "commit `9b524d0`",
+    "commit `1165db3`",
+    "first response omitted Case 3",
+    "Exact serving model identifiers and sampling seeds were not recorded",
+):
+    if marker not in run_log:
+        fail(f"three-case run log lacks process disclosure: {marker}")
+
+with (comparison / "scores.csv").open(encoding="utf-8", newline="") as handle:
+    score_rows = list(csv.DictReader(handle))
+if len(score_rows) != 27:
+    fail(f"three-case score data expected 27 rows, found {len(score_rows)}")
+direct_total = sum(int(row["direct_score"]) for row in score_rows)
+skill_total = sum(int(row["skill_score"]) for row in score_rows)
+if (direct_total, skill_total) != (283, 298):
+    fail(
+        "three-case score totals do not match published result: "
+        f"Direct={direct_total}, Skill={skill_total}"
+    )
+if any(
+    row["direct_hard_failure"] != "false"
+    or row["skill_hard_failure"] != "false"
+    for row in score_rows
+):
+    fail("three-case score data contains an undisclosed hard failure")
+
 print(
-    "PASS: project structure, skill references, local links, examples, and "
-    "controlled-test evidence validated"
+    "PASS: project structure, skill references, local links, examples, "
+    "controlled tests, and three-case score data validated"
 )
 sys.exit(0)

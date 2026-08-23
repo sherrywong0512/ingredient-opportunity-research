@@ -14,6 +14,17 @@ changelog tracks the skill's own frontmatter `version` field
 
 - README Install section rewritten around the discovery-root model (clone alone is not enough; repo ships a discovery copy).
 
+### Added
+
+- DeepSeek cross-model replication of the one-sentence benchmark (`evaluation/minimal-prompt-benchmark/deepseek/`): six fresh sessions, anonymized outputs, separate blind reviewer, scores and group key. Result is a retained null-to-mixed finding: no overall Skill advantage on DeepSeek (96.8 vs 96.6, Direct more stable); Skill-led only on MycoPro-PV9 capacity-conversion separation.
+- `install.sh` (one-command install) and a repo-level discovery copy at `.agents/skills/` so cloning the repo auto-exposes the skill in Codex / Kimi Code / DeepSeek Harness.
+- README: clone-and-use quickstart, per-platform install/invocation table, degraded-mode section for agents without web/PDF tools.
+
+### Changed
+
+- README Install section rewritten around the discovery-root model (clone alone is not enough; repo ships a discovery copy).
+- Main README evaluation table and honest-limitations paragraph updated with the DeepSeek null result.
+
 ## [1.2.0] - 2026-08-23
 
 ### Added

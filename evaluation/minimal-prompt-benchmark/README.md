@@ -41,6 +41,14 @@ The result supports a product design claim: users need not know the full chemica
 - Exact model versions, sampling parameters and the word-for-word harness instruction were not preserved. Saved-output scoring is reproducible; output generation is not.
 - This benchmark does not measure factual retrieval, real market accuracy, time savings or business outcomes.
 
+## Cross-model follow-up: DeepSeek
+
+A replication of this protocol on a second model family — DeepSeek (`deepseek-v4-flash`, via DeepSeek Harness), same frozen facts packs, same one-sentence prompts, same rotating order, same frozen rubrics, six fresh sessions (three per condition), anonymized outputs, and a separate blind-reviewer session that never saw condition labels: [deepseek/](deepseek/README.md).
+
+**Result: the Skill's overall advantage did not reproduce on DeepSeek** — Direct 96.6 (range 8, SD 3.9) vs Skill 96.8 (range 13, SD 4.8) across nine outputs each; 0 hard failures; 18/18 safe headline. Per case: tied on FermaDHA-X (100 vs 100), Skill-led on MycoPro-PV9 (94.7 vs 92.0, the only full capacity-conversion handling was a Skill output), Direct-led on DermaBis-A95 (97.7 vs 95.7). Two of the four preregistered gates (Skill mean higher; Direct less stable) were not met on DeepSeek.
+
+Reading: the skill's measured benefit is **model-dependent** — largest where direct generation is weakest, near zero where direct generation is already strong. This null-to-mixed replication is retained deliberately and narrows the supported claim: framework-coverage gains on specific decision dimensions, not a universal advantage.
+
 ## Evidence trail
 
 - [Preregistered protocol](protocol.md)

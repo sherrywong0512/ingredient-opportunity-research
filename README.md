@@ -25,18 +25,30 @@ Every material claim carries an evidence level (E1–E5) and an inline, retrieva
 
 The installable unit is the whole `skill/ingredient-opportunity-research/` directory — `SKILL.md` plus `references/`. Copy it into your agent's skill path; do not copy `SKILL.md` alone, because the detailed protocols live in `references/`.
 
-```text
-# Codex (personal): ~/.codex/skills/
+| Platform | Install location | How the skill is invoked |
+|---|---|---|
+| Codex (personal) | `~/.codex/skills/ingredient-opportunity-research/` | Auto from task description; or say "use the ingredient-opportunity-research skill" |
+| Codex / Kimi Code / DeepSeek Harness (repo-level) | `<project>/.agents/skills/ingredient-opportunity-research/` | Auto-discovery from the skill description; also honored by tools that scan `.agents/skills` |
+| Claude Code | `<project>/.claude/skills/ingredient-opportunity-research/` | Auto from task description; or `/skill` / name the skill explicitly |
+| Kimi Code (personal) | `~/.kimi-code/skills/` (or `~/.agents/skills/`) | `/skill:ingredient-opportunity-research` |
+| Kimi Work (desktop/cloud) | Import via its custom-skill / document-to-skill flow | Use a shorter name such as `ingredient-opportunity` (its name limit) |
+| DeepSeek Harness (project) | `<project>/.dsh/skills/ingredient-opportunity-research/` | Auto from task description (scans `.dsh/skills` and `.agents/skills`) |
+
+```bash
+# Codex (personal)
 cp -R skill/ingredient-opportunity-research ~/.codex/skills/
 
-# Codex / Kimi Code (repo-level): .agents/skills/
+# Repo-level for Codex / Kimi Code / DeepSeek Harness
 cp -R skill/ingredient-opportunity-research .agents/skills/
 
-# Claude Code: .claude/skills/
+# Claude Code
 cp -R skill/ingredient-opportunity-research .claude/skills/
+
+# DeepSeek Harness (project)
+cp -R skill/ingredient-opportunity-research .dsh/skills/
 ```
 
-Requires the agent to have web research, file and PDF tools; the skill defines the workflow, it does not bundle tools.
+Requires the agent to have web research, file and PDF tools; the skill defines the workflow, it does not bundle tools. After install, ask the agent to confirm it loaded `references/evidence-and-sources.md` before starting — the reference protocols are what make the output evidence-traceable.
 
 ## Usage
 

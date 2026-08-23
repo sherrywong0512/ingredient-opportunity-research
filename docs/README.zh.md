@@ -136,7 +136,7 @@ Direct 组已经能做出安全的 headline decision；Skill 的优势主要体�
 
 ## Install and invoke
 
-将 `skill/ingredient-opportunity-research` 整个目录复制到 Agent 的 Skill 路径；不能只复制 `SKILL.md`，因为详细规则在 `references/` 中。
+将 `skill/ingredient-opportunity-research` 整个目录复制到 Agent 的 Skill 路径；不能只复制 `SKILL.md`，因为详细规则在 `references/` 中。各平台（Codex / Claude Code / Kimi Code / Kimi Work / DeepSeek Harness）的安装位置与调用语法见 [英文 README 的 Install 表](../README.md#install)。
 
 ```text
 使用 ingredient-opportunity-research，调研[原料]在[国家/产品领域]的市场机会。

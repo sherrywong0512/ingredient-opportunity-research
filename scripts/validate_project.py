@@ -13,8 +13,10 @@ SKILL = ROOT / "skill" / "ingredient-opportunity-research"
 
 REQUIRED = [
     ROOT / "README.md",
+    ROOT / "docs" / "README.zh.md",
     ROOT / "docs" / "PRD.md",
     ROOT / "docs" / "product-case-study.md",
+    ROOT / "CHANGELOG.md",
     SKILL / "SKILL.md",
     SKILL / "agents" / "openai.yaml",
     ROOT / "evaluation" / "case-audit.md",
@@ -39,10 +41,13 @@ REQUIRED = [
     ROOT / "evaluation" / "minimal-prompt-benchmark" / "run-log.md",
     ROOT / "evaluation" / "minimal-prompt-benchmark" / "scores.csv",
     ROOT / "prompts" / "example-prompts.md",
+    ROOT / "examples" / "README.md",
+    ROOT / "examples" / "00-minimal-evidence-demo.md",
     ROOT / "examples" / "01-isomalt-china-bakery.md",
     ROOT / "examples" / "02-gellan-gum-consumer-products.md",
     ROOT / "examples" / "03-hmo-global-market.md",
     ROOT / "examples" / "04-bisabolol-china-skincare.md",
+    ROOT / "scripts" / "validate_report.py",
     SKILL / "references" / "market-size-and-demand.md",
     SKILL / "references" / "product-format-screening.md",
 ]
@@ -68,7 +73,7 @@ for line in frontmatter_lines:
         continue
     key, value = line.split(":", 1)
     frontmatter[key] = value.strip().strip('"').strip("'")
-allowed_keys = {"name", "description", "license", "allowed-tools", "metadata"}
+allowed_keys = {"name", "description", "license", "allowed-tools", "metadata", "version", "updated"}
 unexpected_keys = set(frontmatter) - allowed_keys
 if unexpected_keys:
     fail(f"unexpected SKILL.md frontmatter keys: {sorted(unexpected_keys)}")
@@ -104,6 +109,8 @@ for markdown in ROOT.rglob("*.md"):
             )
 
 for report in (ROOT / "examples").glob("*.md"):
+    if report.name == "README.md":
+        continue
     text = report.read_text(encoding="utf-8")
     if "执行结论" not in text:
         fail(f"example lacks an executive conclusion: {report.name}")
@@ -207,8 +214,11 @@ for audit_name, (audit_section, markers) in required_by_section.items():
             fail(f"bisabolol {audit_name} audit lacks required marker: {marker}")
 
 readme = (ROOT / "README.md").read_text(encoding="utf-8")
+readme_zh = (ROOT / "docs" / "README.zh.md").read_text(encoding="utf-8")
 prd = (ROOT / "docs" / "PRD.md").read_text(encoding="utf-8")
 case_audit = (ROOT / "evaluation" / "case-audit.md").read_text(encoding="utf-8")
+if "examples/04-bisabolol-china-skincare.md" not in readme_zh:
+    fail("docs/README.zh.md does not register the bisabolol case")
 if "examples/04-bisabolol-china-skincare.md" not in readme:
     fail("README does not register the bisabolol case")
 if "Bisabolol pre-audit" not in case_audit:

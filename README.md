@@ -1,153 +1,104 @@
 # Ingredient Opportunity Research
 
-> 一个面向化工企业战略发展与原料业务团队的证据型研究 Skill：在新原料工艺开发和重资产投入前，识别真实机会、一票否决项与下一步验证动作。
+An evidence-led AI research skill for ingredient and raw-material teams: turn fragmented market information into an auditable feasibility report and downstream customer-development actions **before** committing to process development, capacity build-out, or market entry.
 
-## 30 秒看懂这个产品
+Full Chinese narrative (product thinking, case audits, iteration history): [docs/README.zh.md](docs/README.zh.md) · Product requirements: [docs/PRD.md](docs/PRD.md) · Design decisions: [docs/product-case-study.md](docs/product-case-study.md) · Change log: [CHANGELOG.md](CHANGELOG.md)
 
-| 产品问题 | 我的回答 |
-|---|---|
-| 首要用户 | 化工企业战略发展部；未设完整战略部门时，也包括企业主、业务负责人和兼职市场研究人员 |
-| 他们要做什么决定 | 新原料是否值得工艺开发、产能建设、应用验证或市场进入 |
-| 原有流程哪里失效 | 跨专业人工搜索耗时且容易遗漏；市场报告、论文、专利、标签和供应商材料口径混杂 |
-| 核心方案 | 建立 `原料身份 → 特性 → 产品问题 → 一票否决项 → 产品形态 → 市场采用 → 内部经济性 → 决策行动` 的可审计链路 |
-| 产品原则 | 先阻止错误决策，再追求完整报告；未知不自动变成中性结论 |
-| 当前验证状态 | v1 初步开发完成；一句话输入重复盲评与结构化提示校准均已完成，已有专家试用正向反馈，仍需人类专家和真实案例验证 |
+## What it does
 
-## 我从案例审计中识别的问题假设
+- locks the exact ingredient identity (name, grade, source, strain, jurisdiction) and separates it from similarly named substances;
+- traces every proposed application back to a measured property or labels it a hypothesis — never starts from a category list and retrofits benefits;
+- applies hard gates (need, regulation, technical fit, use amount, use cost, buyer visibility) before any application advances;
+- audits **China, the United States and the European Union as separate columns** for food ingredients, preserving category-specific use levels;
+- maps applications to concrete saleable product formats — "bakery", "beverage" or "soothing skincare" is not a format;
+- verifies current adoption at SKU level (current label/ingredient list/filing) and keeps adoption status separate from buyer qualification;
+- separates price signals (transactions, quotations, shipment estimates, public listings), ingredient cost from manufacturing cost, and legal permission from demonstrated effect;
+- runs a supply–demand gap audit whenever an opportunity claim depends on shortage or undersupply;
+- forbids a model-authored opportunity grade; outputs `not reliably estimable` instead of false precision;
+- ends with evidence gaps, the smallest next validation experiments, and decisions reserved for industry experts.
 
-原料机会研究最危险的结果不是“信息不够多”，而是把不同层级的证据拼成一个看似确定的商业结论。例如：
+## Evidence discipline
 
-- 把同名原料、不同纯度、菌株、来源或牌号当成同一个产品；
-- 把论文里的机制、专利示例或法规允许，写成成品人体功效；
-- 把产能、推荐摄入缺口、低渗透率或询盘直接写成市场缺口；
-- 把品牌属于某个品类，写成它正在使用或准备采购该原料；
-- 用零售挂牌价、不同规格报价推断成交价格和下降趋势。
+Every material claim carries an evidence level (E1–E5) and an inline, retrievable source. The level describes the evidence, not how attractive the opportunity is. Supplier marketing, patents, reviews and company statements are labeled as interested evidence; sales, ratings and continued listing never prove ingredient causality. If the required comparison cannot be aligned, the report says so.
 
-这些模式在仓库案例审计中反复出现，可能让团队在工艺研发或产线建设前形成错误判断。因此我把首要产品问题定义为**高额投入前的决策质量**，而不是生成更长的行业报告。市场容量过小、法规周期过长、实际生产成本高于成交价等单一信息具有一票否决权，不能被其他优势平均掉。
+## Install
 
-## 我的产品判断
+The installable unit is the whole `skill/ingredient-opportunity-research/` directory — `SKILL.md` plus `references/`. Copy it into your agent's skill path; do not copy `SKILL.md` alone, because the detailed protocols live in `references/`.
 
-我没有把它设计成“自动找热门应用”的提示词，而是做成一个带硬门槛的决策工作流：
+```text
+# Codex (personal): ~/.codex/skills/
+cp -R skill/ingredient-opportunity-research ~/.codex/skills/
 
-```mermaid
-flowchart LR
-    A[锁定原料身份与规格] --> B[验证特性和失败模式]
-    B --> C[连接真实产品问题]
-    C --> D[市场/法规/技术/成本/产能一票否决项]
-    D --> E[筛选具体产品形态]
-    E --> F[验证SKU采用与需求]
-    F --> G[证据台账、验证清单和停止条件]
+# Codex / Kimi Code (repo-level): .agents/skills/
+cp -R skill/ingredient-opportunity-research .agents/skills/
+
+# Claude Code: .claude/skills/
+cp -R skill/ingredient-opportunity-research .claude/skills/
 ```
 
-三项关键取舍：
+Requires the agent to have web research, file and PDF tools; the skill defines the workflow, it does not bundle tools.
 
-1. **不用一个“机会分数”掩盖不同风险。** 法规、技术、需求和证据状态分别表达。
-2. **报告可以不完整，但不能假装完整。** 无法对齐的数据输出 `not reliably estimable`，并给出最小补证动作。
-3. **产品形态先于市场规模和客户名单。** “舒缓护肤”“烘焙”“饮料”不是可销售形态，必须落到基质、工艺、包装、用量、宣称和买家。
+## Usage
 
-完整的产品需求见 [产品需求文档（PRD）](docs/PRD.md)；问题形成过程、决策链和设计取舍见 [产品案例说明](docs/product-case-study.md)。
+Invoke it by describing the task; the model matches the skill from its description. You can also name it explicitly.
 
-### 我的职责与 AI 协作边界
+```text
+Use the ingredient-opportunity-research skill. Research the market opportunity
+for <ingredient> in <geography/application area>. Output a feasibility report
+first, then identify <N> evidence-backed potential customers.
+```
 
-- 我负责定义决策问题、证据边界、工作流架构、案例审计方法、测试设计和保留/修复规则；
-- AI 用于公开资料研究、初稿生成、受控测试和独立审查；
-- 已有专家试用，但当前没有行业专家参与仓库内的正式盲评，也没有证据证明真实销售、立项或投资回报改善；
-- 用户反馈估计节省约 80%–90% 搜索时间并提高判断准确性；由于仓库尚无样本量、计时基线和逐项评审记录，当前按初步试用结果呈现，不作为独立量化结论。
+The default output is a Markdown feasibility report. Customer lists, interview guides, key-account cards and presentation outlines are produced only on request, after the report exists. Languages: Chinese, English, or bilingual. More reproducible requests: [prompts/example-prompts.md](prompts/example-prompts.md).
 
-## 我如何验证它是否好用
+## Examples
 
-我把“好用”拆成四层，避免用一个验证脚本冒充产品效果：
-
-| 层级 | 验证问题 | 当前证据 | 能证明什么 | 不能证明什么 |
-|---|---|---|---|---|
-| 结构验证 | Skill 是否完整、链接是否有效、案例是否包含必要章节 | `python3 scripts/validate_project.py` | 文件和输出契约可执行 | 事实正确或商业有效 |
-| 案例审计 | 工作流能否暴露身份、法规、技术、采用和价格缺口 | Isomalt 82、Gellan gum 72、HMO 68；内部研究质量自审 | 输出质量和缺口可见 | 事实准确、机会优劣、外部专家评分或 Skill 因果提升 |
-| 一句话重复对照 | 用户不懂完整框架时，Skill 是否稳定补全决策维度 | [三案例、每组各 3 次重复盲评](evaluation/minimal-prompt-benchmark/README.md) | 合成案例中 Skill 95.0 vs Direct 85.7，且组内波动更小 | 行业认可、真实市场准确率、跨模型泛化或业务结果 |
-| 三案例受控对照 | 相同证据包下，Skill 是否提高审计完整性和行动可执行性 | [Direct vs Skill 三案例评测](evaluation/three-case-comparison/README.md) | 三个合成资本决策场景中 Direct 283/300、Skill 298/300 | 真实事实准确性、专家效率、商业结果或跨模型泛化 |
-| 专家试用 | 系统是否节省搜索时间并提高专业覆盖 | 用户报告有效、覆盖较全面、未发现明显错误，估计节省 80%–90% 时间 | 已进入可用和持续验证阶段 | 缺少样本量、计时基线和独立准确性评分，不能视为正式量化验证 |
-
-详细量表、硬门槛和案例剩余缺口见 [案例质量审计](evaluation/case-audit.md)。
-
-### 主评测：一句话输入的完整性与稳定性
-
-用户只需说一句“请评估这个原料是否值得建设目标产线，并给出依据和下一步”。在三个预注册合成案例、每种条件三次独立会话中：
-
-| 条件 | 9 份输出均分 | 最低分 | 总体极差 | 总体标准差 | 硬失败 |
-|---|---:|---:|---:|---:|---:|
-| Direct | 85.7 | 60 | 40 | 11.4 | 0 |
-| Skill | 95.0 | 87 | 13 | 4.7 | 0 |
-
-Skill 在三个案例中的均分都更高，且每个案例的组内极差和标准差都更小。差异最明显地出现在 DermaBis-A95 的 SKU 采用、市场容量处置和产品形态框架。两组 18 份输出的 headline decision 都是“不立即建线、先做有边界验证”，所以结论是**框架覆盖和重复运行稳定性改善**，不是“只有 Skill 才能得出正确结论”。盲评由同模型族而非行业专家完成；分组映射也未在评分前做哈希承诺，只能视为作者记录，不能写成“化工行业认可”或完全独立可审计的因果实验。
-
-### 校准评测：结构化提示下的三个预注册案例
-
-| 案例 | Direct | Skill | 差值 | 两组硬失败 |
-|---|---:|---:|---:|---:|
-| FermaDHA-X 扩产 | 96 | 100 | +4 | 0 |
-| MycoPro-PV9 宠物食品扩线 | 92 | 99 | +7 | 0 |
-| DermaBis-A95 护肤原料专线 | 95 | 99 | +4 | 0 |
-| **平均分** | **94.3** | **99.3** | **+5.0** | **0** |
-
-Direct 组已经能做出安全的 headline decision；Skill 的优势主要体现在资本决策审计覆盖、不可比证据处理和下一步验证门槛，而不是把错误结论变成正确结论。协议、冻结输入、匿名原始输出、盲评分、组别揭盲和 CSV 数据均保存在仓库中；但组别映射没有在评分前做哈希承诺，只能按作者记录解释。三个案例是针对已知失败模式设计的合成回归测试，不是无偏市场 benchmark。
-
-## 我如何发现问题并修复
-
-每次修改都保留 `问题信号 → 假设 → 最小修改 → 检查 → 保留/回退`。前四轮主要是规则设计与案例回归检查；只有第 5、6 轮有同输入对照，不把规则符合性检查冒充因果验证。
-
-| 问题信号 | 根因判断 | 产品修改 | 如何验证 |
-|---|---|---|---|
-| 应用停留在“舒缓护肤”等大类 | 类目规模不能直接指导配方或客户 | 新增产品形态筛选：基质、工艺、包装、接触方式、用量、宣称、替代品和买家 | Bisabolol 案例必须逐形态给出结果和决定性缺口 |
-| 供应商称全球需求 500–800 吨 | 单一利益相关方数字被当成市场事实 | 新增供给、贸易、下游使用三视角和来源独立性检查 | 无独立闭环时必须输出不可可靠估计 |
-| 低渗透率、营养缺口、RFQ 被写成供需缺口 | 需求成熟度与供应约束被合并 | 新增 demand maturity、supply constraint、evidence status 三轴 | 对抗用例禁止把非约束询盘写成 committed demand |
-| 不同来源、规格和条款价格被拿来算降价 | 比较对象不一致 | 增加同口径价格趋势门槛 | 不匹配快照只能支持价格离散，不能计算降幅 |
-
-完整迭代证据见 [迭代记录](evaluation/iteration-log.md)。这里明确区分：**结构和表达改善不会自动提高证据分数。**
-
-## 案例
-
-| 案例 | 被验证的产品问题 | 当前状态 |
+| Example | What it exercises | Status |
 |---|---|---|
-| [Isomalt：中国烘焙](examples/01-isomalt-china-bakery.md) | 身份混淆、耐受风险、使用成本、10 个探索账户 | 内部质量自审 82/100；非机会分/外部评分，仍缺完整标签和美国法律路径 |
-| [Gellan gum：消费品](examples/02-gellan-gum-consumer-products.md) | HA/LA 牌号、饮料法规、替代体系和客户优先级 | 内部质量自审 72/100；非机会分/外部评分，仍缺当前标签和同口径体系成本 |
-| [HMO：全球市场](examples/03-hmo-global-market.md) | 分子家族、菌株/来源授权、消费者教育和客户路由 | 内部质量自审 68/100；非机会分/外部评分，仍缺完整美欧矩阵和工业 RFQ |
-| [Bisabolol：中国护肤](examples/04-bisabolol-china-skincare.md) | 产品形态、市场需求审计、促渗风险和采用证据 | 预审，尚未 decision-ready，不评分 |
+| [00 – Minimal evidence demo](examples/00-minimal-evidence-demo.md) | Core table formats (synthetic, for format reference) | Format demo, not real research |
+| [01 – Isomalt, China bakery](examples/01-isomalt-china-bakery.md) | Identity confusion, tolerance risk, use cost, 10 exploratory accounts | Internal self-audit 82/100; not decision-ready |
+| [02 – Gellan gum, consumer products](examples/02-gellan-gum-consumer-products.md) | HA/LA grades, beverage regulation, substitute systems, account priority | Internal self-audit 72/100 |
+| [03 – HMO, global market](examples/03-hmo-global-market.md) | Molecule family, strain/source authorizations, consumer education, routing | Internal self-audit 68/100 |
+| [04 – Bisabolol, China skincare](examples/04-bisabolol-china-skincare.md) | Product-format screen, market demand audit, penetration risk, adoption | Pre-audit; not scored |
 
-低分或未评分不是失败隐藏，而是产品输出的一部分：它告诉使用者哪里不能继续推断，以及下一步应该购买、询问或实验什么。
+Low scores are a product feature: they tell the user where inference must stop and what to buy, ask or experiment next. Index with versions and dates: [examples/README.md](examples/README.md).
+
+## Evaluation (what the repo proves — and does not)
+
+The repo separates structural checks from effect claims:
+
+| Layer | Question | Current evidence | Proves | Does not prove |
+|---|---|---|---|---|
+| Structural | Is the skill complete, are links valid, do reports honor the contract? | `python3 scripts/validate_project.py` + `python3 scripts/validate_report.py` | File and output contracts are executable | Factual accuracy or business value |
+| Case audit | Does the workflow expose identity, regulatory, technical, adoption and price gaps? | Isomalt 82, Gellan 72, HMO 68 self-audits | Gaps are visible and reported | Expert or market validation |
+| One-sentence repeat | Does the skill stabilize coverage when the user only says one sentence? | 3 preregistered synthetic cases × 3 fresh sessions each | Skill mean 95.0 vs Direct 85.7; lower within-case range and SD; no hard failures | Industry endorsement, real-market accuracy, cross-model generality |
+| Structured calibration | Same frozen evidence pack, Direct vs Skill | 3-case controlled comparison | Direct 283/300, Skill 298/300 | Real-world decisions or ROI |
+
+Details, protocols, anonymized raw outputs and scores: [minimal-prompt-benchmark](evaluation/minimal-prompt-benchmark/README.md) · [three-case-comparison](evaluation/three-case-comparison/README.md) · [case-audit](evaluation/case-audit.md) · [iteration-log](evaluation/iteration-log.md).
+
+Honest limitations: benchmark cases are synthetic and designed around known failure modes; blind review was done by the same model family, not by industry experts; group-key mappings were not hash-committed before scoring; and there is no evidence yet of real sales, project-approval or ROI improvement. The strongest supported claim is narrow: in these three synthetic cases, a one-sentence request plus the skill produced more complete and more stable decision-framework outputs than direct generation — it did not change the headline investment recommendation.
 
 ## Repository structure
 
 ```text
 .
-├── skill/ingredient-opportunity-research/  # 可安装 Skill 与按需加载的 references
-├── docs/PRD.md                             # 用户、需求、AI 机制、指标与验收标准
-├── docs/product-case-study.md              # 产品问题、用户、需求与设计取舍
-├── examples/                               # 四个证据边界不同的案例
-├── evaluation/
-│   ├── case-audit.md                       # 硬门槛与质量审计
-│   ├── iteration-log.md                    # 问题—修复—验证记录
-│   ├── controlled-test/                    # 首个冻结扩产测试
-│   ├── three-case-comparison/              # 结构化提示校准：协议、盲评和 CSV
-│   └── minimal-prompt-benchmark/            # 一句话、3 次重复、匿名输出和稳定性数据
-├── scripts/validate_project.py             # 无第三方依赖的结构校验
-└── .github/workflows/validate.yml          # GitHub Actions
+├── skill/ingredient-opportunity-research/  # the installable skill (SKILL.md + references/)
+├── docs/                                   # PRD, product case study, Chinese README
+├── examples/                               # five evidence-boundary examples (00–04)
+├── evaluation/                             # case audit, iteration log, controlled tests, benchmark
+├── prompts/                                # reproducible invocation examples
+├── scripts/                                # dependency-free validators and statistics
+└── .github/workflows/validate.yml          # CI
 ```
-
-## Install and invoke
-
-将 `skill/ingredient-opportunity-research` 整个目录复制到 Agent 的 Skill 路径；不能只复制 `SKILL.md`，因为详细规则在 `references/` 中。
-
-```text
-使用 ingredient-opportunity-research，调研[原料]在[国家/产品领域]的市场机会。
-先输出可行性报告，再根据已验证证据识别[N]个潜在客户。
-```
-
-更多可复现请求见 [example prompts](prompts/example-prompts.md)。
 
 ## Boundaries
 
-- 公开资料不能证明保密配方、供应关系、合同价格或采购意图；
-- 原料合法可用不等于成品宣称已经成立；
-- 标签只能证明出现，不能证明添加量、因果功效或商业效果；
-- 专利和供应商应用资料是实验起点，不是生产配方；
-- 所有法规、价格、SKU 和公司信息在商业使用前必须刷新；
-- 本项目支持专家决策，不替代法规、配方、采购或商业负责人。
+- public sources cannot prove confidential formulas, supplier relationships, contract prices or buying intent;
+- a legally permitted ingredient is not proof of a finished-product claim;
+- a label proves presence, not dosage, causal efficacy or commercial effect;
+- patents and supplier application data are experiment starting points, not production recipes;
+- all regulatory, price, SKU and company information must be refreshed before commercial use;
+- this project supports expert decisions; it does not replace regulatory, formulation, procurement or business owners.
+
+## License
+
+MIT — see [LICENSE](LICENSE).

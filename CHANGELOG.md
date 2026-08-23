@@ -4,6 +4,16 @@ All notable changes to this repository are recorded here. The version in this
 changelog tracks the skill's own frontmatter `version` field
 (`skill/ingredient-opportunity-research/SKILL.md`).
 
+### Added
+
+- `install.sh`: one-command install for Codex / Claude Code / Kimi Code / DeepSeek Harness.
+- Repo-level discovery copy shipped at `.agents/skills/ingredient-opportunity-research/`: cloning + opening the repo in Codex, Kimi Code, or DeepSeek Harness auto-discovers the skill (zero install); validator enforces byte-identity with the bundle source.
+- README: clone-and-use quickstart, per-platform install/invocation table, and a degraded-mode section for agents without web/PDF tools.
+
+### Changed
+
+- README Install section rewritten around the discovery-root model (clone alone is not enough; repo ships a discovery copy).
+
 ## [1.2.0] - 2026-08-23
 
 ### Added

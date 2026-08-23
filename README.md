@@ -23,7 +23,28 @@ Every material claim carries an evidence level (E1–E5) and an inline, retrieva
 
 ## Install
 
-The installable unit is the whole `skill/ingredient-opportunity-research/` directory — `SKILL.md` plus `references/`. Copy it into your agent's skill path; do not copy `SKILL.md` alone, because the detailed protocols live in `references/`.
+**Cloning this repository alone does not expose the skill** in every project, but the repo ships a discovery copy at `.agents/skills/ingredient-opportunity-research/` — so **if you work inside this repo with Codex, Kimi Code, or DeepSeek Harness, the skill is auto-discovered with zero install**. To use it in *other* projects, install it globally:
+
+### Quickstart after cloning
+
+```bash
+git clone <this-repo>
+cd ingredient-opportunity-research
+# Inside this repo: already usable (auto-discovered from .agents/skills/).
+# For other projects:
+./install.sh --codex     # personal Codex install, usable in every project
+# or ./install.sh --all       codex + repo-level + claude
+```
+
+Then, in any Codex session (this repo, or any project after a global install), say:
+
+```text
+Use the ingredient-opportunity-research skill. Research the market opportunity
+for <ingredient> in <geography/application area>. Output a feasibility report
+first, then identify <N> evidence-backed potential customers.
+```
+
+### Platform install paths
 
 | Platform | Install location | How the skill is invoked |
 |---|---|---|
@@ -35,20 +56,23 @@ The installable unit is the whole `skill/ingredient-opportunity-research/` direc
 | DeepSeek Harness (project) | `<project>/.dsh/skills/ingredient-opportunity-research/` | Auto from task description (scans `.dsh/skills` and `.agents/skills`) |
 
 ```bash
-# Codex (personal)
-cp -R skill/ingredient-opportunity-research ~/.codex/skills/
-
-# Repo-level for Codex / Kimi Code / DeepSeek Harness
-cp -R skill/ingredient-opportunity-research .agents/skills/
-
-# Claude Code
-cp -R skill/ingredient-opportunity-research .claude/skills/
-
-# DeepSeek Harness (project)
-cp -R skill/ingredient-opportunity-research .dsh/skills/
+# Manual copy equivalents
+cp -R skill/ingredient-opportunity-research ~/.codex/skills/        # Codex personal
+cp -R skill/ingredient-opportunity-research .agents/skills/         # repo-level (Codex/Kimi/DSH)
+cp -R skill/ingredient-opportunity-research .claude/skills/         # Claude Code
+cp -R skill/ingredient-opportunity-research .dsh/skills/            # DeepSeek Harness
 ```
 
 Requires the agent to have web research, file and PDF tools; the skill defines the workflow, it does not bundle tools. After install, ask the agent to confirm it loaded `references/evidence-and-sources.md` before starting — the reference protocols are what make the output evidence-traceable.
+
+### Degraded mode (limited or no web/PDF tools)
+
+If the agent lacks web research or PDF access, the workflow still runs but degrades honestly instead of inventing precision:
+
+- uses the public-source fallback in `references/evidence-and-sources.md` — official product pages, marketplaces, filings, job postings and interviews — instead of paid databases;
+- lowers evidence levels (E3–E5, or 已验证→推断→待验证) and labels gaps as `not reliably estimable`;
+- lists exactly what could not be verified, so the reader knows which conclusions to distrust;
+- never fabricates a source, price, quote, or SKU to fill a gap.
 
 ## Usage
 

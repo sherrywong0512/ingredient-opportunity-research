@@ -17,6 +17,7 @@ REQUIRED = [
     ROOT / "docs" / "PRD.md",
     ROOT / "docs" / "product-case-study.md",
     ROOT / "CHANGELOG.md",
+    ROOT / "install.sh",
     SKILL / "SKILL.md",
     SKILL / "agents" / "openai.yaml",
     ROOT / "evaluation" / "case-audit.md",
@@ -61,6 +62,20 @@ def fail(message: str) -> None:
 for path in REQUIRED:
     if not path.is_file():
         fail(f"missing required file: {path.relative_to(ROOT)}")
+
+# The repo-level discovery copy (.agents/skills) must stay byte-identical to
+# the skill bundle source (skill/), so cloning + opening the repo in Codex /
+# Kimi Code / DeepSeek Harness auto-discovers the skill without install.
+agents_copy = ROOT / ".agents" / "skills" / "ingredient-opportunity-research"
+if not agents_copy.is_dir():
+    fail("missing repo-level discovery copy: .agents/skills/ingredient-opportunity-research")
+for skill_path in SKILL.rglob("*"):
+    if not skill_path.is_file():
+        continue
+    relative = skill_path.relative_to(SKILL)
+    copy_path = agents_copy / relative
+    if not copy_path.is_file() or copy_path.read_bytes() != skill_path.read_bytes():
+        fail(f"repo-level skill copy drifted from bundle source: {relative}")
 
 skill_text = (SKILL / "SKILL.md").read_text(encoding="utf-8")
 frontmatter_match = re.match(r"^---\n(.*?)\n---", skill_text, re.DOTALL)

@@ -16,7 +16,7 @@ Distinguish molecular family, individual molecule, salt or form, production orga
 
 These patterns have produced identity errors in practice; verify each before writing:
 
-- **Family versus molecule:** 维生素 B5 (vitamin B5) is a family label; the molecule may be 泛酸 (pantothenic acid), 泛酸钙 (calcium D-pantothenate), 泛醇 (panthenol/D-panthenol), or 右泛醇 (D-panthenol). Do not let a family name stand in for the researched grade.
+- **Family versus molecule:** 维生素 B6 (vitamin B6) is a family label; the molecule may be 吡哆醇 (pyridoxine), 吡哆醛 (pyridoxal), 吡哆胺 (pyridoxamine), or 磷酸吡哆醛 (pyridoxal 5′-phosphate, PLP). Do not let a family name stand in for the researched grade.
 - **Sugars and sugar alcohols:** 异麦芽酮糖醇 (isomalt / isomaltitol, INS/E 953) is not 异麦芽酮糖 (isomaltulose); 山梨糖醇/山梨醇 (sorbitol) is not 山梨酸钾 (potassium sorbate, a preservative); 木糖醇 (xylitol) is not 木糖 (xylose). One-character differences change identity, regulation and claims.
 - **Chemical name versus INCI versus trade name:** the same molecule can appear as a chemical name, an INCI name, an E number, a CAS number, and a brand name (e.g., 益寿糖 for isomalt). Record which identifier was used for each regulatory check and do not swap them silently.
 - **Source/strain specificity:** 透明质酸钠 (sodium hyaluronate) may be microbial fermentation, animal-derived, or of different molecular weights; a strain-specific or source-specific authorization applies only to the exact product, not the same-named molecule.

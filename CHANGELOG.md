@@ -4,6 +4,31 @@ All notable changes to this repository are recorded here. The version in this
 changelog tracks the skill's own frontmatter `version` field
 (`skill/ingredient-opportunity-research/SKILL.md`).
 
+## [1.3.0] - 2026-08-24
+
+### Added
+
+- ACES-style evaluation of the skill (`evaluation/aces/`), applying the methodology of *Evaluating Skills, Not Just Agents: Agentic Continuous Evaluation of Skills* (arXiv:2608.20614):
+  - structured evaluation assets (`evals.json`): 6 cases (3 frozen reuse + 2 new fresh + 1 negative control), each with per-case `expected_behavior[]` assertions, a 6-item workflow checklist and 5 accuracy questions;
+  - preregistered in two auditable steps: protocol/assets committed before trial generation (commit `6ffcec7`), then anonymized blind outputs plus a SHA-256-hash-committed group key before any review (commit `d1220d3`);
+  - fresh paired with-skill/baseline trials on two new cases (Omega-3 supply-demand gap audit; non-consumer industrial boundary negative control); frozen cases reuse the minimal-prompt-benchmark evidence;
+  - blind per-behavior grading of all 22 outputs and Skill Lift analysis with composite and outcome-only views;
+  - routing probes: trigger precision/recall (6/6, 3/3) and group routing with decoy skills (3/3, no over-triggering);
+  - `scripts/analyze_aces.py`: dependency-free recomputation of lifts, 95% CIs and static-vs-live correlations from `scores.csv`;
+  - `docs/aces-review.md`: paper-to-skill improvement mapping.
+- `scripts/validate_project.py` registers the new evaluation assets and docs.
+
+### Result summary (retained honestly)
+
+- Composite Skill Lift 0.0076 (95% CI [0.0004, 0.0149]); outcome-only −0.0067 (95% CI [−0.0197, 0.0064]); 0 hard failures. **Near-zero lift**: the skill's earlier rubric-level advantage does not translate to behavior-level lift on this corpus.
+- Behavior-level gains only on adverse/null-finding classification (case-02: Skill 3/3 vs Direct 0/3) and substitution-whitespace classification (case-04: Skill 1/1 vs Direct 0/1).
+- Static vs live: Spearman(rubric total, behavior_check) = 0.342; (rubric total, accuracy) = 0.111 — static scores are not runtime evidence, reproducing the ACES finding.
+- README (EN) and docs/README.zh.md evaluation tables and honest-limitations paragraphs updated with these results.
+
+### Changed
+
+- `scripts/validate_project.py` registers `evaluation/aces/` assets and `docs/aces-review.md`.
+
 ### Added
 
 - `install.sh`: one-command install for Codex / Claude Code / Kimi Code / DeepSeek Harness.

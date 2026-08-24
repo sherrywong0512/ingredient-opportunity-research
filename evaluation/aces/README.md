@@ -30,7 +30,7 @@ This is consistent with the repo's earlier DeepSeek replication (no overall adva
 The only measurable gains are **two specific classifications the baseline systematically misses**, both explicit decision rules in the skill's gap-audit / evidence-classification guidance:
 
 - case-02 `mycopro-pv9`, B4 adverse/null-finding classification: Direct 0/3 vs Skill 3/3;
-- case-04 `omega3-gap`, B3 substitution-whitespace classification: Direct 0/1 vs Skill 1/1.
+- case-04 `omega3-gap`, B3 substitution-whitespace classification: Direct 0/1 vs Skill 1/1 — the Direct output additionally produced a labeled "13,000 t/y optimistic upper bound" mixing mixed-concentration/period RFQs with 50%-concentrate qualified supply, a false-precision figure the case's hard-failure clause targets; the Skill output returned the market-level total as `not reliably estimable`.
 
 Counter-signals: on case-02 B7 (nameplate vs qualified saleable supply) Skill missed 2/3 vs Direct 1/3; on case-03 A3 (factual consistency) the only error in all 22 outputs was a Skill output transcribing two billion as 两亿件 (200 million, factor-of-10, recommendation unchanged). Details: [behavior-review.md](behavior-review.md), [accuracy-review.md](accuracy-review.md).
 

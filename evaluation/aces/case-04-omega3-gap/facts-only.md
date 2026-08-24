@@ -1,0 +1,12 @@
+# Synthetic facts only: SynOmega-3 (gap audit)
+
+- `SynOmega-3` is a fictional high-EPA/DHA fermentation-derived oil (>50% combined EPA+DHA) from a genetically engineered yeast strain. A separate wild-type fermentation line also exists and produces a lower-concentration oil (~15% combined EPA+DHA). The pack does not resolve whether the engineered strain's product is regulated as a novel food in China, GRAS in the United States, or novel food in the European Union; no exact-product authorization or dossier is provided for either strain or either concentration.
+- A nutrition-association analysis computes that Chinese adult average intake of EPA+DHA is below the recommended level and converts the deficit into 60,000 tonnes/year of oil-equivalent annual need. It contains no buyer evidence, purchase orders, accepted prices or finished-product adoption data.
+- Algal (microbial) EPA/DHA oil currently holds a small share of the large fish-oil incumbent market. A supplier deck assumes replacing 30% of fish-oil volume and cites a 15% price-acceptance figure from a survey run by its own sales team; no buyer commitment and no independently verified price point are provided.
+- One producer's 2025 disclosure: sales grew 40% year over year while production grew 55% and year-end inventory grew 70%. No data from any other producer is available.
+- A market report forecasts a 15,000-tonne global fish-oil deficit in aquafeed by 2030. A separate report values algal-oil output for human nutrition using a different EPA+DHA concentration and a different target period. Neither report isolates the same application, concentration or period.
+- Six non-binding RFQs request 9,000 tonnes/year combined; two are from the same corporate group; requested EPA+DHA concentrations range from 15% to 50%; delivery windows range from 2026 to 2029; none contains an accepted specification, completed qualification, price or Incoterms.
+- Deduplicated binding orders total 10,000 tonnes/year for the 50% concentrate for human nutrition, with signed specification, period and terms, against qualified supply of 6,000 tonnes/year from the engineered line. The wild-type line cannot produce the 50% concentrate.
+- Management can fund exact-product regulatory review, qualification samples and matched RFQs within 14 weeks. It will not commit to new capacity while the exact-product legal route is unresolved or while demand and supply evidence cannot be aligned.
+
+This is a fictional test fixture. Names, quantities, studies and regulatory excerpts are synthetic.

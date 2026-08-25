@@ -181,7 +181,6 @@ If evidence is inaccessible or the available universe is small, disclose that li
 
 - Every decision-critical claim must carry an appropriate source, date where time-sensitive, evidence level, and limitation.
 - Distinguish facts, estimates, hypotheses, and unknowns in every decision-critical section.
-- Verify every number against its source before finalizing: unit (亿/万/十亿/billion/MM), order of magnitude, denominator, period and identity; re-transcribe any figure taken from a source; treat a factor-of-10, unit, denominator or period error in a decision-critical figure as a hard defect even when the conclusion is unchanged.
 - End with the rule-based completeness check, unmet or conditional rules, validation actions, and decisions reserved for supplier, regulatory, or industry experts.
 - Do not issue an overall model-authored opportunity grade. The separate rubric in [test-scenarios.md](test-scenarios.md) evaluates report quality only.
 
@@ -204,5 +203,4 @@ The report is not decision-ready when it relies on any of the following:
 - non-binding RFQs, LOIs, interviews, price interest, low penetration or an incumbent pool presented as committed unmet demand;
 - a shortlisted application that remains a broad category without a concrete product-format screen, or whose format retail value is presented as ingredient-addressable demand without adoption and use-amount evidence;
 - a consumer-facing recommendation whose success materially depends on ingredient recognition, trust, or claim comprehension but does not assess that dependency;
-- a Chinese or bilingual report whose decision-critical terminology is inconsistent, stronger than the source, or not traceable to the original term;
-- a decision-critical number transcribed from a source with a factor-of-10, unit, denominator or period error (for example, 200 million written as 两亿件 for two billion units).
+- a Chinese or bilingual report whose decision-critical terminology is inconsistent, stronger than the source, or not traceable to the original term.

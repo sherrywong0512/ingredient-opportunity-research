@@ -1,7 +1,7 @@
 ---
 name: ingredient-opportunity-research
-version: 1.3.0
-updated: 2026-08-24
+version: 1.2.0
+updated: 2026-08-23
 description: Research market feasibility and downstream sales opportunities for ingredients and raw materials used in consumer products. Use when an ingredient sales team needs to identify promising consumer-product applications, investigate comparable market prices, validate formulation and process feasibility with papers or patents, assess demand, competition, regulation, consumer awareness and market-education burden, find and prioritize potential B2B customers, or prepare optional interview guides, key-account plans, and presentation outlines. Supports professionally edited Chinese, English, and bilingual deliverables.
 ---
 
@@ -152,7 +152,6 @@ The report must:
 - include a use-amount and use-cost table for each priority application, with the formula, assumptions, source basis, range, unit-product cost, and sensitivity to price and amount;
 - include a technical evidence matrix for priority applications and trace each proposed experiment to a documented evidence gap;
 - avoid a model-authored opportunity grade or score;
-- verify every number against its source before finalizing: unit (亿/万/十亿/billion/MM), order of magnitude, denominator, period and identity; re-transcribe any figure taken from a source and treat a factor-of-10, unit, denominator or period error in a decision-critical figure as a hard defect even when the conclusion is unchanged;
 - end with evidence gaps, validation actions, and decisions reserved for industry experts.
 - identify the researched ingredient unambiguously at the start; use authoritative food, regulatory and scientific terminology and run a natural-Chinese editing pass, but do not add a terminology table to the report unless multiple names or translations could change identity, regulation, evidence transfer, or the decision;
 - end with the rule-based completeness check required by [research-quality-rules.md](references/research-quality-rules.md); do not call the report decision-ready while a decision-readiness blocker remains.

@@ -15,6 +15,15 @@ changelog tracks the skill's own frontmatter `version` field
 - README Install section rewritten around the discovery-root model (clone alone is not enough; repo ships a discovery copy).
 - Main README evaluation table and honest-limitations paragraph updated with the DeepSeek null result.
 
+### Added
+
+- README synced to PRD v1.2: current-phase statement, north-star metric (expert-agreed decision-blocker recall), preregistered next-validation gates, roadmap (v1.x/v2/v3), and non-goal boundaries; both English and Chinese READMEs updated.
+- zh README: DeepSeek cross-model section and corrected clone-and-use install statement.
+
+### Changed
+
+- docs/README.zh.md install section corrected: cloning the repo now auto-exposes the skill (repo ships .agents/skills discovery copy); install needed only for other projects.
+
 ## [1.2.0] - 2026-08-23
 
 ### Added

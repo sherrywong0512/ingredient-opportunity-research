@@ -2,7 +2,9 @@
 
 An evidence-led AI research skill for ingredient and raw-material teams: turn fragmented market information into an auditable feasibility report and downstream customer-development actions **before** committing to process development, capacity build-out, or market entry.
 
-Full Chinese narrative (product thinking, case audits, iteration history): [docs/README.zh.md](docs/README.zh.md) · Product requirements: [docs/PRD.md](docs/PRD.md) · Design decisions: [docs/product-case-study.md](docs/product-case-study.md) · Change log: [CHANGELOG.md](CHANGELOG.md)
+**Status (v1.2):** v1 shipped; currently in cross-ingredient validation and maintenance. The core deliverable is a decision chain, not a report: evidence ledger → executable validation checklist → expert decision.
+
+Full Chinese narrative (product thinking, case audits, iteration history): [docs/README.zh.md](docs/README.zh.md) · Product requirements (spec, metrics, non-goals): [docs/PRD.md](docs/PRD.md) · Design decisions: [docs/product-case-study.md](docs/product-case-study.md) · Change log: [CHANGELOG.md](CHANGELOG.md)
 
 ## What it does
 
@@ -114,6 +116,25 @@ Details, protocols, anonymized raw outputs and scores: [minimal-prompt-benchmark
 
 Honest limitations: benchmark cases are synthetic and designed around known failure modes; blind review was done by the same model family, not by industry experts; group-key mappings were not hash-committed before scoring; a DeepSeek cross-model replication did **not** reproduce the Skill's overall advantage (96.8 vs 96.6, Direct more stable), so the skill's measured benefit is model-dependent and dimension-specific; and there is no evidence yet of real sales, project-approval or ROI improvement. The strongest supported claim is narrow: in these three synthetic cases on the original model family, a one-sentence request plus the skill produced more complete and more stable decision-framework outputs than direct generation — it did not change the headline investment recommendation, and it did not generalize to an overall mean advantage on DeepSeek.
 
+### Validation plan (north star and next gates)
+
+North star: **expert-agreed decision-blocker recall** — the share of regulatory, technical, identity, market and adoption blockers the system identifies out of an expert-consensus list. A missed veto gate can cost more than all search time saved, so efficiency claims are subordinate to blocker recall and factual accuracy.
+
+Preregistered next-validation gates (from the [PRD](docs/PRD.md)):
+
+| Metric | Gate |
+|---|---|
+| Skill-only critical hard-gate misses | 0 (5 frozen real cases vs no-skill baseline) |
+| Severe unsupported conclusions | 0 (3 blind reviewers, preregistered rubric) |
+| Decision-blocker recall | ≥90% vs expert consensus |
+| Next-step executability | ≥4/5 cases (object, action, evidence gate, stop condition) |
+| Search/research time | median reduction ≥80%, reproduced on ≥3 real cases |
+| Expert revision volume | median reduction ≥15% |
+| Market-reality match | not below expert baseline (ex-post price/capacity/customer check) |
+| Recommendation accuracy | no severe errors |
+
+None of these gates is met yet — they are the plan. Expert-trial feedback (reported ~80–90% time saving) is user-reported, not independently measured, and is not claimed here as validated.
+
 ## Repository structure
 
 ```text
@@ -127,6 +148,15 @@ Honest limitations: benchmark cases are synthetic and designed around known fail
 └── .github/workflows/validate.yml          # CI
 ```
 
+## Roadmap
+
+- **v1.0 (shipped):** research contract, property-to-market chain, hard gates, product-format screen, evidence ledger, validation checklist, Markdown report, optional customer actions.
+- **v1.x (current):** cross-ingredient validation — compare system output with real prices, capacity, regulation and customers; ≥5 frozen real cases with an expert gold set; multi-reviewer blind review with timing and revision-volume records; minimal rule fixes per failure type.
+- **v2:** composable strategic-analysis tool — structured input/output contract, enterprise data interfaces, versioned evidence objects; composes with financial, technical, competitive and project-decision skills rather than rebuilding their capabilities.
+- **v3 (only if demand confirms):** opportunity-assessment writing workbench — structured intake, evidence-ledger/checklist/report versioning, expert annotations, decision logs, refresh reminders, permissions and audit.
+
+Platformization is not a goal in itself; the skill remains the lighter product form unless long-term collaboration, permission and data-integration needs are confirmed.
+
 ## Boundaries
 
 - public sources cannot prove confidential formulas, supplier relationships, contract prices or buying intent;
@@ -134,7 +164,10 @@ Honest limitations: benchmark cases are synthetic and designed around known fail
 - a label proves presence, not dosage, causal efficacy or commercial effect;
 - patents and supplier application data are experiment starting points, not production recipes;
 - all regulatory, price, SKU and company information must be refreshed before commercial use;
-- this project supports expert decisions; it does not replace regulatory, formulation, procurement or business owners.
+- this project supports expert decisions; it does not replace regulatory, formulation, procurement or business owners;
+- it is not a monitoring platform: no real-time tracking, database updates, or CRM writes;
+- it does not auto-purchase paid data, bypass access controls, or use unauthorized internal material;
+- it does not ship unanonymized internal process, cost, quote or capacity data to external models.
 
 ## License
 

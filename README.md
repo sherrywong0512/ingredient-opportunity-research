@@ -6,6 +6,18 @@ An evidence-led AI research skill for ingredient and raw-material teams: turn fr
 
 Full Chinese narrative (product thinking, case audits, iteration history): [docs/README.zh.md](docs/README.zh.md) · Product requirements (spec, metrics, non-goals): [docs/PRD.md](docs/PRD.md) · Design decisions: [docs/product-case-study.md](docs/product-case-study.md) · Change log: [CHANGELOG.md](CHANGELOG.md)
 
+## Who it's for
+
+- **Primary:** strategy and market-research teams at chemical companies who must decide — before process development or capacity investment — whether a new ingredient is worth pursuing, what the veto gates are, and what must be validated first.
+- **Also:** owners, business and sales leads at companies without a full strategy department, who run opportunity research alongside their day job and need a cross-disciplinary baseline.
+- **Supporting roles:** process R&D, application R&D, sales, regulatory, finance and industry experts — the system gives them a shared, auditable evidence trail and hands final sign-off back to humans.
+
+## Why this exists
+
+A new ingredient can require years of process development and heavy capital before the first tonne sells; if the demand is not there, the company carries the sunk cost. Strategy teams must decide on fragmented public information spanning chemistry, regulation, applications, pricing and customers — and generic AI tends to collapse those mixed evidence layers into a fluent but unauditable "opportunity". This project reverses that sequence: lock the exact identity, trace every application to a measured property, run veto gates, verify adoption at SKU level, and stop with an evidence ledger and validation checklist instead of a confident narrative.
+
+Full background, problem analysis and user context: [docs/PRD.md](docs/PRD.md) · design decisions and trade-offs: [docs/product-case-study.md](docs/product-case-study.md)
+
 ## What it does
 
 - locks the exact ingredient identity (name, grade, source, strain, jurisdiction) and separates it from similarly named substances;

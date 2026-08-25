@@ -3,6 +3,7 @@
 
 from pathlib import Path
 import csv
+import json
 import re
 import statistics
 import sys
@@ -519,8 +520,57 @@ for case in sorted({row["case"] for row in minimal_rows}):
     if statistics.pstdev(skill_case) >= statistics.pstdev(direct_case):
         fail(f"minimal benchmark variability gate is not met for {case}")
 
+# --- ACES evaluation assets: evals.json schema validation ---
+aces_dir = ROOT / "evaluation" / "aces"
+evals_path = aces_dir / "evals.json"
+try:
+    evals = json.loads(evals_path.read_text(encoding="utf-8"))
+except Exception as exc:  # noqa: BLE001
+    fail(f"evals.json is not valid JSON: {exc}")
+
+if evals.get("schema_version") != "1.0":
+    fail("evals.json schema_version must be '1.0'")
+if not isinstance(evals.get("default_metrics"), list) or len(evals["default_metrics"]) < 6:
+    fail("evals.json default_metrics must list at least 6 metrics")
+if not isinstance(evals.get("workflow_checklist"), list) or len(evals["workflow_checklist"]) != 6:
+    fail("evals.json workflow_checklist must have exactly 6 items")
+if not isinstance(evals.get("accuracy_questions"), list) or len(evals["accuracy_questions"]) != 5:
+    fail("evals.json accuracy_questions must have exactly 5 items")
+
+case_ids = []
+for case in evals.get("cases", []):
+    cid = case.get("id", "")
+    if not re.fullmatch(r"[a-z0-9-]{1,64}", cid):
+        fail(f"evals.json case has invalid id: {cid!r}")
+    if cid in case_ids:
+        fail(f"evals.json duplicate case id: {cid}")
+    case_ids.append(cid)
+    for field in ("route", "user_prompt", "facts_pack"):
+        if not case.get(field):
+            fail(f"evals.json case {cid} is missing {field}")
+    expected_skill = case.get("expected_skill")
+    if expected_skill is not None and not isinstance(expected_skill, str):
+        fail(f"evals.json case {cid} expected_skill must be a string or null")
+    trial_type = case.get("trial_type")
+    if trial_type not in {"reuse-frozen", "fresh", "registered"}:
+        fail(f"evals.json case {cid} trial_type must be reuse-frozen/fresh/registered")
+    behaviors = case.get("expected_behavior", [])
+    if not isinstance(behaviors, list) or not behaviors or not all(
+        isinstance(b, str) and b.strip() for b in behaviors
+    ):
+        fail(f"evals.json case {cid} expected_behavior must be a non-empty list of strings")
+    if trial_type == "fresh":
+        pack = aces_dir / case["facts_pack"]
+        if not pack.is_file():
+            fail(f"evals.json case {cid} fresh facts_pack file missing: {case['facts_pack']}")
+    elif trial_type == "reuse-frozen" and not case["facts_pack"].startswith("reuse:"):
+        fail(f"evals.json case {cid} reuse-frozen facts_pack must start with 'reuse:'")
+    elif trial_type == "registered" and not case["facts_pack"].startswith("TBD"):
+        fail(f"evals.json case {cid} registered facts_pack must start with 'TBD'")
+
 print(
     "PASS: project structure, skill references, local links, examples, "
-    "controlled tests, three-case scores, and minimal-prompt repeats validated"
+    "controlled tests, three-case scores, minimal-prompt repeats, "
+    "and ACES evals.json schema validated"
 )
 sys.exit(0)

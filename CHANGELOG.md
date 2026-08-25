@@ -28,6 +28,8 @@ changelog tracks the skill's own frontmatter `version` field
 ### Changed
 
 - `scripts/validate_project.py` registers `evaluation/aces/` assets and `docs/aces-review.md`.
+- Skill behavior changed (version 1.2.0 → **1.3.0**): explicit number-verification step added to `SKILL.md` and `research-quality-rules.md` — every figure is re-transcribed against its source (unit 亿/万/十亿/billion/MM, order of magnitude, denominator, period, identity), and a factor-of-10/unit/denominator/period error in a decision-critical figure is a hard defect even when the conclusion is unchanged. Directly motivated by the case-03 transcription error reproduced across two benchmarks.
+- `evaluation/aces/evals.json` extended with the four remaining `test-scenarios.md` routes (isomalt, gellan, nootkatone, HMO) as registered asset-only cases; `scripts/validate_project.py` now validates the `evals.json` schema in CI (case ids, required fields, expected_behavior lists, facts-pack references by trial type).
 
 ### Added
 

@@ -52,7 +52,8 @@ Trigger precision/recall 6/6 and 3/3; group routing 3/3 with no over-triggering.
 
 - The skill's marginal value is **dimension-specific, not global** — concentrate claims on the classifications it demonstrably improves (demand-maturity and substitution classification, adverse-finding reporting), and stop citing rubric-total advantage as runtime evidence.
 - The negative control (non-consumer boundary) passed in both arms on this probe; keep it as a regression case so the boundary rule stays executable.
-- The case-03 transcription error recurred across two benchmarks — a candidate authoring fix (explicit unit/number verification step), though it did not change any decision.
+- The case-03 transcription error recurred across two benchmarks and is now **addressed in skill v1.3.0**: an explicit number-verification step (unit/order-of-magnitude/denominator/period re-check, factor-of-10 or unit error in a decision-critical figure = hard defect) was added to `SKILL.md` and `research-quality-rules.md`.
+- The four remaining `test-scenarios.md` routes (isomalt, gellan, nootkatone, HMO) are now **registered as structured asset-only cases** in `evals.json` (`trial_type: "registered"`), executable when a frozen facts pack is constructed for each; `evals.json` schema is validated in CI via `scripts/validate_project.py`.
 
 ## Honest limitations
 

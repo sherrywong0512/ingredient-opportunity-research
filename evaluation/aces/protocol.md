@@ -45,6 +45,8 @@ Per case, per metric: `Lift = mean(Skill outputs) − mean(Direct outputs)` (for
 
 Frozen cases reuse the already-committed facts packs, one-sentence prompts, outputs and rubric scores in `minimal-prompt-benchmark/` and `three-case-comparison/`; this evaluation adds the behavior-level grading layer over the same evidence. New cases get new synthetic facts packs (committed here), one-sentence prompts, and case rubrics.
 
+**Registered asset-only cases (added 2026-08-24):** the four remaining `test-scenarios.md` routes — `isomalt-bakery`, `gellan-consumer`, `nootkatone-market`, `hmo-global` — are registered in `evals.json` as `trial_type: "registered"` with their `expected_behavior[]` sets (no trial evidence yet; a frozen facts pack must be constructed before each is run). The schema validator in `scripts/validate_project.py` enforces this asset contract in CI.
+
 ## Trial execution (new cases)
 
 Both conditions receive the same frozen facts pack, the same one-sentence prompt, the same output limit (≤ 1,200 Chinese characters for `omega3-gap`; ≤ 800 English words for `industrial-boundary`), and the same prohibition on browsing, web search, or adding facts beyond the pack.

@@ -50,11 +50,15 @@ ACES found scan scores are essentially uncorrelated with live lift. The same que
 
 The paper's thesis: evaluation assets live with the artifact and run on every change. The repo's CI currently validates structure only.
 
-**Action taken (partial):** `scripts/analyze_aces.py` is dependency-free and reproducible from `scores.csv`; `evals.json` is registered in the repo validator. Recommended next step: a schema check for `evals.json` in `.github/workflows/validate.yml` and a scheduled re-run after model updates.
+**Action taken (partial):** `scripts/analyze_aces.py` is dependency-free and reproducible from `scores.csv`; `evals.json` schema (case ids, required fields, expected_behavior lists, facts-pack references by trial type) is now validated inside `scripts/validate_project.py`, which CI runs on every push — a malformed evaluation asset blocks the build. Recommended next step: a scheduled live re-run after model updates.
 
 ### 8. Trajectory / process logs (ATIF analog)
 
 For an analysis skill the "trajectory" is which references the agent read and what coverage it disclosed. The skill already requires search-coverage disclosure in outputs; the eval now also records, per trial, which skill files the with-skill arm actually read (RUNLOG), making the process observable.
+
+### 9. Number-verification step (from the evaluation's replicated finding)
+
+The ACES evaluation reproduced the case-03 "two billion → 两亿件" (factor-of-10) transcription error across two benchmarks. A rule-level fix is now in the skill: `SKILL.md` and `research-quality-rules.md` require re-transcribing every figure against its source and treat a factor-of-10/unit/denominator/period error in a decision-critical figure as a hard defect (skill v1.3.0).
 
 ## What the measurement found
 

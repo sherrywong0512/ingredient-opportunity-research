@@ -24,6 +24,13 @@ changelog tracks the skill's own frontmatter `version` field
 
 - docs/README.zh.md install section corrected: cloning the repo now auto-exposes the skill (repo ships .agents/skills discovery copy); install needed only for other projects.
 
+### Fixed
+
+- validate_report.py bibliography-heading matching: exact match rejected
+  legitimate headings with parenthetical notes (e.g. "Sources（合并文献目录）");
+  now prefix-based, with regression tests (scripts/test_validate_report.py)
+  wired into CI.
+
 ## [1.3.0] - 2026-08-23
 ### Changed
 

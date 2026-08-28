@@ -13,3 +13,5 @@ jobs:
         with:
           python-version: "3.12"
       - run: python3 scripts/validate_project.py
+      - run: python3 scripts/validate_report.py --examples
+      - run: python3 -m unittest discover -s scripts -p 'test_*.py' -v

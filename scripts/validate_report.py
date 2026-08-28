@@ -84,6 +84,15 @@ GAP_AUDIT_MARKERS = (
 )
 
 
+BIBLIO_HEADING_PREFIXES = ("Sources", "主要来源", "References", "参考来源")
+
+
+def is_bibliography_heading(heading: str) -> bool:
+    """A bibliography heading may carry a parenthetical note (e.g.
+    'Sources（合并文献目录；行内引用已在各表）'); match by prefix."""
+    return any(heading.startswith(prefix) for prefix in BIBLIO_HEADING_PREFIXES)
+
+
 def check_report(path: Path) -> int:
     errors: list[str] = []
     warnings: list[str] = []
@@ -111,7 +120,7 @@ def check_report(path: Path) -> int:
         heading = line[3:].strip()
         if re.match(r"^\d+\.", heading):
             continue
-        if heading in ("Sources", "主要来源", "References", "参考来源"):
+        if is_bibliography_heading(heading):
             continue
         errors.append(
             f"{name}: unnumbered top-level heading {heading!r}; "
@@ -132,7 +141,9 @@ def check_report(path: Path) -> int:
         )
 
     # 2b. A trailing bibliography must not be the only citation source.
-    body = re.split(r"^##\s+(Sources|主要来源|References|参考来源)\s*$", text, flags=re.M)[0]
+    body = re.split(
+        r"^##\s+(?:Sources|主要来源|References|参考来源)", text, flags=re.M
+    )[0]
     if len(INLINE_SOURCE_RE.findall(text)) >= 3 and len(INLINE_SOURCE_RE.findall(body)) < 3:
         errors.append(
             f"{name}: inline citations appear only in the trailing bibliography; "

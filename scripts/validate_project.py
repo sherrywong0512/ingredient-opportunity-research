@@ -53,6 +53,7 @@ REQUIRED = [
     ROOT / "examples" / "03-hmo-global-market.md",
     ROOT / "examples" / "04-bisabolol-china-skincare.md",
     ROOT / "scripts" / "validate_report.py",
+    ROOT / "scripts" / "test_validate_report.py",
     SKILL / "references" / "market-size-and-demand.md",
     SKILL / "references" / "product-format-screening.md",
 ]

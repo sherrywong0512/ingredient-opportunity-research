@@ -2,6 +2,17 @@
 
 Use this as the default Markdown deliverable. Match the user's language and shorten sections that lack decision value.
 
+## Formatting and source-placement conventions
+
+These conventions keep every report and every example structurally consistent. Apply them before delivery; `scripts/validate_report.py` checks the machine-verifiable parts.
+
+- **Section headings:** numbered Arabic headings, `## 1.`, `## 2.`, … in the order below; the executive conclusion is always section 1. Do not use Chinese numerals or unnumbered headings for top-level sections.
+- **Inline citations:** every material claim in a table carries its source inside the same row (an `Exact source and locator` column, a URL/DOI, or a directly attached `来源：` line under the table). The trailing `## Sources` section is a consolidated bibliography only; it is never the sole citation for a material claim.
+- **Synthesis rows:** when a row synthesizes multiple studies (e.g., a mechanism summary), state it explicitly — `综合多源，见 Sources：<entry>` — instead of leaving the row uncited or inventing a single source.
+- **Lists and emphasis:** use `- ` for bullet lists; lead conclusions with a bold label such as `**结论：**` / `**Conclusion:**`; keep one bullet level per list; do not mix indentation styles.
+- **Evidence markers:** every material claim shows its evidence level (E1–E5 or the 已验证/推断/待验证 equivalents) and observation/source date.
+- **Terminology table:** only when identity, regulation, evidence transfer, or the decision depends on ambiguous naming; otherwise one identity statement at the start.
+
 ```markdown
 # [Ingredient] Downstream Market Feasibility — [Geography / Date]
 

@@ -1,6 +1,6 @@
 ---
 name: ingredient-opportunity-research
-version: 1.2.0
+version: 1.3.0
 updated: 2026-08-23
 description: Research market feasibility and downstream sales opportunities for ingredients and raw materials used in consumer products. Use when an ingredient sales team needs to identify promising consumer-product applications, investigate comparable market prices, validate formulation and process feasibility with papers or patents, assess demand, competition, regulation, consumer awareness and market-education burden, find and prioritize potential B2B customers, or prepare optional interview guides, key-account plans, and presentation outlines. Supports professionally edited Chinese, English, and bilingual deliverables.
 ---
@@ -9,14 +9,39 @@ description: Research market feasibility and downstream sales opportunities for 
 
 Turn fragmented market information into an evidence-traceable feasibility report for ingredient sales teams. Research the downstream consumer-product market, then translate findings into customer-development actions. Do not substitute model judgment for an industry expert's commercial decision.
 
+## Guardrails
+
+These rules apply to every request and every deliverable. Hold them from the first step; the rest of the workflow builds on them.
+
+- Use public sources and data tools the user is authorized to access. Never buy credentials, bypass controls, or expose private data.
+- Keep search interest, views, reviews, sales units, GMV, market size, and market share as separate, non-interchangeable measures.
+- Generalize a market only from evidence that covers it; a single platform, promotion period, store, or viral product is not a market.
+- Finished-product human-efficacy claims require finished-product human evidence; supplier marketing, patents, in-vitro work, and animal studies are not substitutes.
+- Regulatory plausibility is not legal approval. Flag issues requiring regulatory or legal review.
+- Confidential supplier relationships, formulas, pricing, projects, and decision authority cannot be inferred from public information.
+- When paid data is unavailable, use the public-source fallback in [evidence-and-sources.md](references/evidence-and-sources.md) and lower the evidence level rather than inventing precision.
+- Every material claim must carry an evidence level and an inline, retrievable source; a bibliography is not a substitute for per-claim citation.
+- The deliverable is a decision chain, not a longer report: conclude first, keep facts/estimates/hypotheses separate, and end with evidence gaps, the smallest next validation actions, and decisions reserved for industry experts.
+
 ## Route the Request
 
-Identify the requested mode before researching:
+Identify the requested mode **before** researching, and write a one-line routing note in your working notes:
 
-1. **Market feasibility** — default and required first output.
-2. **Customer discovery** — add a verified potential-customer list when requested.
-3. **KA development** — add only when the user asks which account to attack or how to advance it.
-4. **Sales artifact** — create interview questions, a customer attack card, a presentation outline, or another requested format after the feasibility analysis exists.
+`route: [modes] | required references: [files] | gate: [which earlier output must exist]`
+
+| Mode | When to select | Adds to the workflow | Gate |
+|---|---|---|---|
+| **Market feasibility** | Default; always the first output | The full feature-to-market chain and the default report | None |
+| **Customer discovery** | User asks for potential customers | Verified customer list per `Identify Potential Customers` | Feasibility analysis must exist or be produced first |
+| **KA development** | User asks which account to attack or how to advance one | Key-account card and advance plan | Feasibility + customer list must exist |
+| **Sales artifact** | User asks for interview questions, attack card, or presentation outline | The requested artifact | Feasibility analysis must exist |
+
+Required references per route (load them in `Run the Feature-to-Market Chain`, at the step that needs them):
+
+- **Any feasibility or customer-discovery route:** `evidence-and-sources.md`, `feature-application-adoption.md`.
+- **Customer discovery / KA:** additionally `customer-adoption-search.md`, `sales-deliverables.md`.
+- **Food ingredients:** additionally `regulatory-audit.md`; Chinese or bilingual food deliverables additionally `food-terminology-and-language.md`.
+- **Route-specific extras:** `product-format-screening.md` for every shortlisted application; `price-research.md`, `technical-validation.md`, `market-size-and-demand.md` when the corresponding question is decision-relevant; `market-awareness-and-education.md` only when awareness could change the decision; `research-quality-rules.md` before finalizing.
 
 Support ingredients whose downstream applications are consumer products, including food and beverage, nutrition, beauty and personal care, household care, pet care, and similar categories. For industrial or intermediate-only materials, explain that the workflow is only partially applicable; adapt it only if the user accepts replacing consumer, retail, and brand modules with industry-specific demand and procurement analysis.
 
@@ -35,19 +60,22 @@ Ask only questions that would materially change scope. If answers are unavailabl
 
 ## Run the Feature-to-Market Chain
 
-Read [evidence-and-sources.md](references/evidence-and-sources.md) before collecting evidence.
-Read [feature-application-adoption.md](references/feature-application-adoption.md) for every market-feasibility or customer-discovery request.
-Read [ecommerce-label-research.md](references/ecommerce-label-research.md) whenever current SKU adoption, competitor formulations, substitutes, claims, or potential-customer status can be checked through retail or marketplace labels.
+Load references from your routing note at the step that needs them; do not load unrelated modules. When the condition for a module is absent, skip it and state the omission.
 
-Read [customer-adoption-search.md](references/customer-adoption-search.md) whenever identifying, verifying, or prioritizing potential customers. Apply the same account-level search sequence and preserve the SKU-level audit trail for every shortlisted account.
-Read [regulatory-audit.md](references/regulatory-audit.md) for every food-ingredient feasibility request. Unless the user limits geography, audit China, the United States, and the European Union together in one concise comparison table, while preserving category-specific use levels and conditions as separate rows.
-Read [price-research.md](references/price-research.md) whenever price, cost, value in use, or commercial feasibility affects the decision. Read [technical-validation.md](references/technical-validation.md) whenever an application, formulation, processing, shelf-life, sensory, efficacy, or experiment recommendation is discussed.
-Read [market-size-and-demand.md](references/market-size-and-demand.md) whenever market size, demand volume, production, capacity, sales volume, market value, growth, TAM/SAM/SOM, supplier financial materiality, or shared-platform value affects the decision. Apply it by default when a feasibility report makes a market-size, growth, standalone-revenue, or portfolio-value conclusion. Run its supply-demand gap audit whenever an opportunity claim depends on shortage, undersupply, low penetration, substitution potential, or proposed new capacity.
-Read [product-format-screening.md](references/product-format-screening.md) for every shortlisted consumer-product application. Translate the application into concrete saleable product formats before estimating demand or selecting customers.
-Read [market-awareness-and-education.md](references/market-awareness-and-education.md) only when consumer recognition, ingredient-led communication, trust, claim comprehension, or education effort could materially change the application or go-to-market decision. It is an optional decision module, not a mandatory report section merely because an ingredient is new.
-Read [food-terminology-and-language.md](references/food-terminology-and-language.md) for every Chinese or bilingual food-ingredient deliverable and run its target-language audit after the evidence and conclusions are fixed.
+Before collecting evidence, read [evidence-and-sources.md](references/evidence-and-sources.md). For every feasibility or customer-discovery request, read [feature-application-adoption.md](references/feature-application-adoption.md).
 
-Read [research-quality-rules.md](references/research-quality-rules.md) before finalizing every feasibility report. Apply all relevant rules, show whether each is met, conditional, not met, or not applicable, and downgrade conclusions when evidence is insufficient. Do not impose arbitrary numeric thresholds.
+Conditional modules (condition first, then the read):
+
+- When current SKU adoption, competitor formulations, substitutes, claims, or potential-customer status can be checked through retail or marketplace labels → read [ecommerce-label-research.md](references/ecommerce-label-research.md).
+- When identifying, verifying, or prioritizing potential customers → read [customer-adoption-search.md](references/customer-adoption-search.md) and apply its account-level sequence with a SKU-level audit trail for every shortlisted account.
+- When the request is food-related → read [regulatory-audit.md](references/regulatory-audit.md); unless the user limits geography, audit China, the United States, and the European Union in one comparison table with category-specific use levels as separate rows.
+- When price, cost, value in use, or commercial feasibility affects the decision → read [price-research.md](references/price-research.md).
+- When an application, formulation, processing, shelf-life, sensory, efficacy, or experiment recommendation is discussed → read [technical-validation.md](references/technical-validation.md).
+- When market size, demand volume, production, capacity, sales volume, market value, growth, TAM/SAM/SOM, supplier financial materiality, or shared-platform value affects the decision → read [market-size-and-demand.md](references/market-size-and-demand.md); run its supply-demand gap audit when an opportunity claim depends on shortage, undersupply, low penetration, substitution potential, or proposed new capacity.
+- For every shortlisted consumer-product application → read [product-format-screening.md](references/product-format-screening.md) and translate the application into concrete saleable product formats before estimating demand or selecting customers.
+- When consumer recognition, ingredient-led communication, trust, claim comprehension, or education effort could materially change the application or go-to-market decision → read [market-awareness-and-education.md](references/market-awareness-and-education.md). It is an optional decision module, not a mandatory report section.
+- When the deliverable is Chinese or bilingual food content → read [food-terminology-and-language.md](references/food-terminology-and-language.md) and run its target-language audit after the evidence and conclusions are fixed.
+- Before finalizing every feasibility report → read [research-quality-rules.md](references/research-quality-rules.md), show whether each applicable rule is met, conditional, not met, or not applicable, and downgrade conclusions when evidence is insufficient.
 
 ### Stage 1: Establish Ingredient Properties
 
@@ -58,7 +86,7 @@ Read [research-quality-rules.md](references/research-quality-rules.md) before fi
 
 Keep this stage limited to the ingredient's measured intrinsic, physicochemical, processing, sensory, biological, compatibility, safety, and analytical properties. Put finished-product application performance, replacement results, competitor comparison, and formulation strategy in the application deep dive, not in the property table.
 
-Do not begin with a category list and retrofit ingredient benefits afterward. A proposed application must trace back to a supported property or be labeled as a hypothesis.
+A proposed application must trace back to a supported property or be labeled as a hypothesis; working backward from a category list is not a valid start.
 
 ### Stage 2: Map Properties to Applications and Apply Hard Gates
 
@@ -71,13 +99,13 @@ Map `ingredient property -> product problem -> required function -> candidate ap
 - **Use cost:** calculate ingredient cost at the intended amount, yield and loss, then keep processing, compliance, testing, logistics, and claim costs separate;
 - **Buyer visibility:** identifiable companies make or develop the relevant products.
 
-After an application passes the first screen, map it to concrete product formats. Do not treat an application area such as soothing skincare, bakery or beverages as a saleable format. For each format, test matrix/phase, process, contact or consumption mode, pack and dose basis, use amount, claim route, substitutes, current SKU adoption, format-level market pool and buyer set. Keep format retail value separate from ingredient-addressable volume.
+After an application passes the first screen, map it to concrete product formats. For each format, test matrix/phase, process, contact or consumption mode, pack and dose basis, use amount, claim route, substitutes, current SKU adoption, format-level market pool and buyer set. Keep format retail value separate from ingredient-addressable volume.
 
-For food applications, show China, United States, and European Union regulatory gates as separate columns in the property-to-application map. Give each jurisdiction an explicit `pass`, `conditional`, `fail`, or `unresolved` result with the decisive category, use condition, and source; never hide cross-market differences behind one global regulatory status.
+For food applications, show China, United States, and European Union regulatory gates as separate columns in the property-to-application map. Give each jurisdiction an explicit `pass`, `conditional`, `fail`, or `unresolved` result with the decisive category, use condition, and source.
 
 For novel, strain-specific, source-specific, or protected ingredients, verify that the supplier's exact product—not merely a same-named molecule—matches the authorization, specification, production source or strain, permitted uses, exclusivity or data-protection conditions, and required dossier.
 
-For food ingredients, do not treat absence from one additive list as prohibition. Determine the applicable legal route, then report the exact permitted or excluded categories and use levels for China, the United States, and the European Union in one comparison table.
+For food ingredients, absence from one additive list is not prohibition: determine the applicable legal route, then report the exact permitted or excluded categories and use levels for China, the United States, and the European Union in one comparison table.
 
 Classify each application as `advance`, `conditional—experiment required`, `regulatory unresolved`, `technical evidence insufficient`, or `do not advance`. State the failing gate and evidence for exclusions. Keep a small, decision-relevant shortlist rather than filling a preset count.
 
@@ -85,12 +113,12 @@ Classify each application as `advance`, `conditional—experiment required`, `re
 
 For each shortlisted application, investigate:
 
-- **Demand:** market direction, consumer need, growth signals, seasonality, and promotion dependence. Keep capacity, production, shipments, sales volume, consumption/demand volume, inventory and sales value as separate measures. When sizing the ingredient market, triangulate supply, trade and downstream-use evidence; do not promote one interested party's estimate or an opaque report into a verified market total. Classify demand maturity, supply constraint and evidence strength separately using [market-size-and-demand.md](references/market-size-and-demand.md).
+- **Demand:** market direction, consumer need, growth signals, seasonality, and promotion dependence. Keep capacity, production, shipments, sales volume, consumption/demand volume, inventory and sales value as separate measures. When sizing the ingredient market, triangulate supply, trade and downstream-use evidence; a single interested party's estimate or an opaque report is not a verified market total. Classify demand maturity, supply constraint and evidence strength separately using [market-size-and-demand.md](references/market-size-and-demand.md).
 - **Market awareness and education, when decision-relevant:** if the ingredient name, benefit explanation, trust, or claim comprehension could affect adoption, assess whether to lead with the ingredient, lead with the benefit, use professional education, or keep the ingredient behind the label. Otherwise omit this module or note it briefly.
 - **Products:** representative brands/SKUs, formulation role, claims, format, pack size, price, sales signals, review themes, and launch activity.
 - **Product formats:** compare concrete forms within each application and show why the ingredient is technically and commercially better suited to some forms than others. Use format-specific market data when available; if only a parent category total is reliable, do not allocate it using an unsupported share.
 - **Competition:** for each application, compare the target ingredient with incumbent and credible alternative ingredient systems on a functionally equivalent basis; show each option's advantages, disadvantages, use-amount basis, process and product fit, cost-in-use, regulatory/label implications, evidence comparability, and switching barriers. When data permit, calculate the change in the replaced ingredient system's cost and the resulting change in estimated total ingredient cost for the finished product, keeping ingredient cost separate from manufacturing cost.
-- **Replacement versus co-formulation:** decompose the incumbent system's product jobs, then use literature and application evidence to assess full replacement, partial replacement, complementary co-formulation, process-enabled change, retaining the incumbent, or a defined comparative experiment. Do not call a mixture synergistic without an appropriate additive/mixture benchmark and interaction evidence.
+- **Replacement versus co-formulation:** decompose the incumbent system's product jobs, then use literature and application evidence to assess full replacement, partial replacement, complementary co-formulation, process-enabled change, retaining the incumbent, or a defined comparative experiment. A synergistic claim requires an appropriate additive/mixture benchmark and interaction evidence.
 - **Value in use:** the economic or product value created for the buyer; separate known figures from cost assumptions.
 - **Science and technical fit:** mechanism, formulation constraints, dosage or process considerations, human/field evidence where relevant, and evidence limitations.
 - **Regulation and claims:** product classification, ingredient status, usage restrictions, claim boundaries, standards, and unresolved legal questions.
@@ -100,7 +128,7 @@ For leading companies and representative SKUs, classify adoption as `verified cu
 
 Use a current label, ingredient list, filing, or equivalent SKU-level record to verify current use. Treat patents, supplier case studies, launch announcements, recruitment, distributor listings, search snippets, and company-level category fit as development or lead signals unless they identify a current commercial SKU and formulation. Disclose the company/SKU universe, channels, dates, and label-access coverage before interpreting negative search results.
 
-Evaluate “how well it works” across five separate channels: finished-product technical performance; human/use outcomes and adverse effects; finished-product regulatory claim eligibility; consumer evidence; and commercial evidence. Apply the SMART evidence audit in [feature-application-adoption.md](references/feature-application-adoption.md) to consumer and commercial conclusions. Do not infer ingredient causality from sales, ratings, reviews, brand claims, patents, or continued listing alone. A legally permitted claim is not proof that the ingredient produced the claimed outcome.
+Evaluate “how well it works” across five separate channels: finished-product technical performance; human/use outcomes and adverse effects; finished-product regulatory claim eligibility; consumer evidence; and commercial evidence. Apply the SMART evidence audit in [feature-application-adoption.md](references/feature-application-adoption.md) to consumer and commercial conclusions. Ingredient causality cannot be inferred from sales, ratings, reviews, brand claims, patents, or continued listing; a legally permitted claim is not proof of the claimed outcome.
 
 Do not force every module when it is irrelevant. Explain omissions.
 
@@ -112,9 +140,9 @@ Before recommending an application or validation experiment:
 4. identify likely failure modes and measurable response variables;
 5. recommend only the smallest experiment needed to close a remaining decision-critical gap.
 
-For every priority application, include traceable application cases and their reported use amounts when available. Preserve the original formulation denominator, process, control, outcome, source locator, and transferability. Do not turn a single case, patent example, supplier formulation, or label presence into an unsupported “typical use amount.”
+For every priority application, include traceable application cases and their reported use amounts when available. Preserve the original formulation denominator, process, control, outcome, source locator, and transferability. A single case, patent example, supplier formulation, or label presence is not a “typical use amount.”
 
-Do not present an untested formulation as a recipe. A patent proves disclosure, not independent performance or freedom to operate. Supplier trials are useful application evidence but remain commercially interested evidence.
+An untested formulation is an experiment starting point, not a recipe. A patent proves disclosure, not independent performance or freedom to operate. Supplier trials are useful application evidence but remain commercially interested evidence.
 
 ## Identify Potential Customers
 
@@ -139,7 +167,7 @@ The report must:
 - lead with a decision-relevant conclusion, not a generic market overview;
 - separate facts, estimates, and hypotheses;
 - attach an evidence level and source date to material claims;
-- attach an inline citation to every ingredient-property row; do not require the reader to infer support from a bibliography;
+- attach an inline citation to every ingredient-property row; a bibliography is optional as a consolidated list and is never the only citation;
 - show what supports and what could invalidate each shortlisted application;
 - trace every shortlisted application from a supported property through a product need and all applicable hard gates;
 - show the concrete product-format screen for every shortlisted application, including matrix/process fit, use/contact pattern, format-level market evidence, current adoption, technical/regulatory barriers, and the format-specific validation needed;
@@ -152,8 +180,9 @@ The report must:
 - include a use-amount and use-cost table for each priority application, with the formula, assumptions, source basis, range, unit-product cost, and sensitivity to price and amount;
 - include a technical evidence matrix for priority applications and trace each proposed experiment to a documented evidence gap;
 - avoid a model-authored opportunity grade or score;
-- end with evidence gaps, validation actions, and decisions reserved for industry experts.
+- end with evidence gaps, validation actions, and decisions reserved for industry experts;
 - identify the researched ingredient unambiguously at the start; use authoritative food, regulatory and scientific terminology and run a natural-Chinese editing pass, but do not add a terminology table to the report unless multiple names or translations could change identity, regulation, evidence transfer, or the decision;
+- use the section and citation conventions in [feasibility-report-template.md](references/feasibility-report-template.md) so every report and example shares the same structure;
 - end with the rule-based completeness check required by [research-quality-rules.md](references/research-quality-rules.md); do not call the report decision-ready while a decision-readiness blocker remains.
 
 Create interview questions, KA cards, presentation outlines, or other artifacts only after the report, and only when requested.
@@ -161,13 +190,3 @@ Create interview questions, KA cards, presentation outlines, or other artifacts 
 When evaluating or revising this skill itself, use [test-scenarios.md](references/test-scenarios.md). Keep research-quality scoring separate from market-opportunity judgment; never turn the evaluation rubric into an ingredient opportunity score.
 
 When improving an existing report or portfolio case, also read [case-improvement.md](references/case-improvement.md). Close decision-readiness blockers before optimizing rubric points or prose, preserve the original evidence boundary, and retain a before/after audit trail.
-
-## Guardrails
-
-- Use public sources and data tools the user is authorized to access. Never buy credentials, bypass controls, or expose private data.
-- Do not equate search interest, views, reviews, sales units, GMV, market size, and market share.
-- Do not extrapolate a whole market from one platform, promotion period, store, or viral product.
-- Do not turn supplier marketing, patents, in-vitro work, animal studies, or ingredient-level research into finished-product human efficacy claims.
-- Do not present regulatory plausibility as legal approval. Flag issues requiring regulatory or legal review.
-- Do not infer confidential supplier relationships, formulas, pricing, projects, or decision authority.
-- When paid data is unavailable, use the public-source fallback in the evidence guide and lower the evidence level rather than inventing precision.

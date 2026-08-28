@@ -103,6 +103,22 @@ def check_report(path: Path) -> int:
             "the executive conclusion must come first"
         )
 
+    # 1b. Top-level sections use Arabic numbering (## 1., ## 2., ...);
+    # a trailing bibliography heading (Sources / 主要来源) is the only exception.
+    for line in text.splitlines():
+        if not re.match(r"^##\s", line):
+            continue
+        heading = line[3:].strip()
+        if re.match(r"^\d+\.", heading):
+            continue
+        if heading in ("Sources", "主要来源", "References", "参考来源"):
+            continue
+        errors.append(
+            f"{name}: unnumbered top-level heading {heading!r}; "
+            "use Arabic numbering (## 1., ## 2., ...)"
+        )
+        break
+
     # 2. Evidence levels and inline sources.
     if not EVIDENCE_LEVEL_RE.search(text) and not LEGACY_EVIDENCE_RE.search(text):
         errors.append(
@@ -113,6 +129,14 @@ def check_report(path: Path) -> int:
         errors.append(
             f"{name}: fewer than 3 inline sources (URL/DOI) found; "
             "material claims need inline citations"
+        )
+
+    # 2b. A trailing bibliography must not be the only citation source.
+    body = re.split(r"^##\s+(Sources|主要来源|References|参考来源)\s*$", text, flags=re.M)[0]
+    if len(INLINE_SOURCE_RE.findall(text)) >= 3 and len(INLINE_SOURCE_RE.findall(body)) < 3:
+        errors.append(
+            f"{name}: inline citations appear only in the trailing bibliography; "
+            "material claims need per-claim inline sources"
         )
 
     # 3. No model-authored opportunity score.

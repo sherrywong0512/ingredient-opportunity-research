@@ -24,6 +24,29 @@ changelog tracks the skill's own frontmatter `version` field
 
 - docs/README.zh.md install section corrected: cloning the repo now auto-exposes the skill (repo ships .agents/skills discovery copy); install needed only for other projects.
 
+## [1.3.0] - 2026-08-23
+### Changed
+
+- SKILL.md 1.2.0 -> 1.3.0 (control-flow and formatting optimization):
+  - Route the Request now emits a routing contract (route modes + required
+    references + gates); Run loads references from the contract at the step
+    that needs them (token efficiency).
+  - Reference-loading rewritten condition-first ("When X -> read Y").
+  - Removed the redundant product-format negation (affirmative requirement
+    already defines a saleable format); kept evidence-discipline negations.
+  - Guardrails moved from the end to the top of SKILL.md (invariant rules,
+    strongest attention position).
+  - feasibility-report-template.md gained a formatting/source-placement
+    contract (Arabic section numbering, per-row inline citations, synthesis
+    rows, list conventions).
+  - validate_report.py enforces Arabic top-level numbering and rejects a
+    trailing bibliography as the only citation source.
+- Examples aligned to the contract: 01 Chinese-numeral headings -> Arabic;
+  02/03 property tables gained inline citations (mapped from their own
+  bibliographies); 00 demo headings renumbered.
+
+## [1.3.0] - 2026-08-23
+
 ## [1.2.0] - 2026-08-23
 
 ### Added

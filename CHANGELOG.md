@@ -31,6 +31,24 @@ changelog tracks the skill's own frontmatter `version` field
   now prefix-based, with regression tests (scripts/test_validate_report.py)
   wired into CI.
 
+## [1.3.1] - 2026-08-23
+### Changed
+
+- SKILL.md 1.3.0 -> 1.3.1: guardrails extracted to references/guardrails.md and
+  loaded first (SKILL.md opens with a mandatory read); validator enforces the
+  reference line and file presence. Note: 1.3.1 was not A/B tested; the A/B
+  covered 1.2.0 vs 1.3.0.
+- feasibility-report-template.md: conclusion-presentation convention added
+  (one bold verdict sentence opens section 1).
+- Example format audit: all examples pass the contract (numbered headings,
+  inline citations, conclusion-first, completeness section); remaining
+  presentation differences (paragraph vs bullet verdict, optional trailing
+  bibliography) are allowed by the contract and documented.
+- Pre-push gate added (.githooks/pre-push): validate_project + validate_report
+  --examples + unit tests run before every push; README documents the hook.
+
+## [1.3.1] - 2026-08-23
+
 ## [1.3.0] - 2026-08-23
 ### Changed
 

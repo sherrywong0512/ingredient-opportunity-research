@@ -1,6 +1,6 @@
 ---
 name: ingredient-opportunity-research
-version: 1.3.0
+version: 1.3.1
 updated: 2026-08-23
 description: Research market feasibility and downstream sales opportunities for ingredients and raw materials used in consumer products. Use when an ingredient sales team needs to identify promising consumer-product applications, investigate comparable market prices, validate formulation and process feasibility with papers or patents, assess demand, competition, regulation, consumer awareness and market-education burden, find and prioritize potential B2B customers, or prepare optional interview guides, key-account plans, and presentation outlines. Supports professionally edited Chinese, English, and bilingual deliverables.
 ---
@@ -11,17 +11,7 @@ Turn fragmented market information into an evidence-traceable feasibility report
 
 ## Guardrails
 
-These rules apply to every request and every deliverable. Hold them from the first step; the rest of the workflow builds on them.
-
-- Use public sources and data tools the user is authorized to access. Never buy credentials, bypass controls, or expose private data.
-- Keep search interest, views, reviews, sales units, GMV, market size, and market share as separate, non-interchangeable measures.
-- Generalize a market only from evidence that covers it; a single platform, promotion period, store, or viral product is not a market.
-- Finished-product human-efficacy claims require finished-product human evidence; supplier marketing, patents, in-vitro work, and animal studies are not substitutes.
-- Regulatory plausibility is not legal approval. Flag issues requiring regulatory or legal review.
-- Confidential supplier relationships, formulas, pricing, projects, and decision authority cannot be inferred from public information.
-- When paid data is unavailable, use the public-source fallback in [evidence-and-sources.md](references/evidence-and-sources.md) and lower the evidence level rather than inventing precision.
-- Every material claim must carry an evidence level and an inline, retrievable source; a bibliography is not a substitute for per-claim citation.
-- The deliverable is a decision chain, not a longer report: conclude first, keep facts/estimates/hypotheses separate, and end with evidence gaps, the smallest next validation actions, and decisions reserved for industry experts.
+Read [references/guardrails.md](references/guardrails.md) **now**, before anything else. Its rules apply to every request and every deliverable; hold them from the first step and do not proceed until you have them loaded.
 
 ## Route the Request
 

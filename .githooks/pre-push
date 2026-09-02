@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Pre-push gate: structural checks, report-format contract and tests must all
+# pass before anything is pushed to GitHub. GitHub Actions re-runs the same
+# checks on push, so this is the fast local gate, not the only one.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+echo "== validate_project.py =="
+python3 scripts/validate_project.py
+
+echo "== validate_report.py --examples (format contract) =="
+python3 scripts/validate_report.py --examples
+
+echo "== unit tests =="
+python3 -m unittest discover -s scripts -p 'test_*.py'
+
+echo "== all pre-push checks passed =="

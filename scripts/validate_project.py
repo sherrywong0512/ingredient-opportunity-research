@@ -56,6 +56,7 @@ REQUIRED = [
     ROOT / "scripts" / "test_validate_report.py",
     SKILL / "references" / "market-size-and-demand.md",
     SKILL / "references" / "product-format-screening.md",
+    SKILL / "references" / "guardrails.md",
 ]
 
 
@@ -115,6 +116,14 @@ if "$ingredient-opportunity-research" not in default_prompt:
 for ref in re.findall(r"\]\((references/[^)#]+\.md)\)", skill_text):
     if not (SKILL / ref).is_file():
         fail(f"SKILL.md points to missing reference: {ref}")
+
+# Guardrails live in references/guardrails.md; SKILL.md must load them first.
+if not (SKILL / "references" / "guardrails.md").is_file():
+    fail("missing required file: skill guardrails reference")
+if "references/guardrails.md" not in skill_text:
+    fail("SKILL.md must reference references/guardrails.md at the top")
+if "## Guardrails" not in skill_text.split("## Route the Request", 1)[0]:
+    fail("SKILL.md guardrails section must appear before Route the Request")
 
 link_pattern = re.compile(r"\[[^\]]+\]\((?!https?://|mailto:|#)([^)]+)\)")
 for markdown in ROOT.rglob("*.md"):

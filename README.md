@@ -6,6 +6,8 @@ An evidence-led AI research skill for ingredient and raw-material teams: turn fr
 
 Full Chinese narrative (product thinking, case audits, iteration history): [docs/README.zh.md](docs/README.zh.md) · Product requirements (spec, metrics, non-goals): [docs/PRD.md](docs/PRD.md) · Design decisions: [docs/product-case-study.md](docs/product-case-study.md) · Change log: [CHANGELOG.md](CHANGELOG.md)
 
+> **Contributing / before pushing:** structural checks, the report-format contract and tests run automatically before every push (`.githooks/pre-push`) and again in GitHub Actions on push. First clone: `git config core.hooksPath .githooks`.
+
 ## Who it's for
 
 - **Primary:** strategy and market-research teams at chemical companies who must decide — before process development or capacity investment — whether a new ingredient is worth pursuing, what the veto gates are, and what must be validated first.

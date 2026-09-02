@@ -67,7 +67,7 @@ If evidence is inaccessible or the available universe is small, disclose that li
 
 ## Product-Format Screening
 
-- Translate every shortlisted application into concrete saleable formats before estimating demand, recommending experiments or selecting customers. A broad benefit, category or use occasion is not a product format.
+- Translate every shortlisted application into concrete saleable formats — each with a defined matrix/phase, process, contact mode, pack and dose basis, use amount and claim route — before estimating demand, recommending experiments or selecting customers.
 - For each format, report the product need, ingredient job, matrix/phase, process, contact or consumption mode, pack/dose basis, evidence use amount, regulatory/claim route, alternatives, current SKU adoption, format-level market evidence, buyers and decisive gap.
 - Do not include a format merely because the ingredient can be added. Require an observable need, plausible retained function and identifiable buyer market.
 - Keep parent-category market, format commercial pool, ingredient-addressable output, ingredient demand and supplier-addressable demand separate.

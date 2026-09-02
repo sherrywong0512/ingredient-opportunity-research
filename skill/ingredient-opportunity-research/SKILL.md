@@ -1,6 +1,6 @@
 ---
 name: ingredient-opportunity-research
-version: 1.3.2
+version: 1.3.3
 updated: 2026-08-23
 description: Research market feasibility and downstream sales opportunities for ingredients and raw materials used in consumer products. Use when an ingredient sales team needs to identify promising consumer-product applications, investigate comparable market prices, validate formulation and process feasibility with papers or patents, assess demand, competition, regulation, consumer awareness and market-education burden, find and prioritize potential B2B customers, or prepare optional interview guides, key-account plans, and presentation outlines. Supports professionally edited Chinese, English, and bilingual deliverables.
 ---
@@ -50,7 +50,7 @@ Ask only questions that would materially change scope. If answers are unavailabl
 
 ## Run the Feature-to-Market Chain
 
-Load references from your routing note at the step that needs them; do not load unrelated modules. When the condition for a module is absent, skip it and state the omission.
+Load references from your routing note at the step that needs them. When the condition for a module is absent, skip it and state the omission.
 
 Before collecting evidence, read [evidence-and-sources.md](references/evidence-and-sources.md). For every feasibility or customer-discovery request, read [feature-application-adoption.md](references/feature-application-adoption.md).
 
@@ -76,7 +76,7 @@ Conditional modules (condition first, then the read):
 
 Keep this stage limited to the ingredient's measured intrinsic, physicochemical, processing, sensory, biological, compatibility, safety, and analytical properties. Put finished-product application performance, replacement results, competitor comparison, and formulation strategy in the application deep dive, not in the property table.
 
-A proposed application must trace back to a supported property or be labeled as a hypothesis; working backward from a category list is not a valid start.
+A proposed application must trace back to a supported property or be labeled as a hypothesis.
 
 ### Stage 2: Map Properties to Applications and Apply Hard Gates
 
@@ -106,7 +106,7 @@ For each shortlisted application, investigate:
 - **Demand:** market direction, consumer need, growth signals, seasonality, and promotion dependence. Keep capacity, production, shipments, sales volume, consumption/demand volume, inventory and sales value as separate measures. When sizing the ingredient market, triangulate supply, trade and downstream-use evidence; a single interested party's estimate or an opaque report is not a verified market total. Classify demand maturity, supply constraint and evidence strength separately using [market-size-and-demand.md](references/market-size-and-demand.md).
 - **Market awareness and education, when decision-relevant:** if the ingredient name, benefit explanation, trust, or claim comprehension could affect adoption, assess whether to lead with the ingredient, lead with the benefit, use professional education, or keep the ingredient behind the label. Otherwise omit this module or note it briefly.
 - **Products:** representative brands/SKUs, formulation role, claims, format, pack size, price, sales signals, review themes, and launch activity.
-- **Product formats:** compare concrete forms within each application and show why the ingredient is technically and commercially better suited to some forms than others. Use format-specific market data when available; if only a parent category total is reliable, do not allocate it using an unsupported share.
+- **Product formats:** compare concrete forms within each application and show why the ingredient is technically and commercially better suited to some forms than others. Use format-specific market data when available; if only a parent category total is reliable, allocate formats only with an evidence-supported share.
 - **Competition:** for each application, compare the target ingredient with incumbent and credible alternative ingredient systems on a functionally equivalent basis; show each option's advantages, disadvantages, use-amount basis, process and product fit, cost-in-use, regulatory/label implications, evidence comparability, and switching barriers. When data permit, calculate the change in the replaced ingredient system's cost and the resulting change in estimated total ingredient cost for the finished product, keeping ingredient cost separate from manufacturing cost.
 - **Replacement versus co-formulation:** decompose the incumbent system's product jobs, then use literature and application evidence to assess full replacement, partial replacement, complementary co-formulation, process-enabled change, retaining the incumbent, or a defined comparative experiment. A synergistic claim requires an appropriate additive/mixture benchmark and interaction evidence.
 - **Value in use:** the economic or product value created for the buyer; separate known figures from cost assumptions.
@@ -140,7 +140,7 @@ When requested, find the number of accounts the user specifies. If no number is 
 
 - Define an ideal customer profile from application fit, geography, product portfolio, innovation activity, regulatory readiness, scale, and accessible buying signals.
 - Match accounts to the supplier's actual saleable grades, capacity, authorized jurisdictions, protected-use constraints, and evidence package before assigning priority. If these inputs are unknown, make account priority conditional rather than selecting a universal first target.
-- Require account-specific evidence that the company makes, develops, or is likely to buy the relevant downstream product. A company in the broad category is not enough.
+- Require account-specific evidence that the company makes, develops, or is likely to buy the relevant downstream product.
 - Distinguish `verified current user`, `plausible buyer`, and `exploratory lead`. Never claim ingredient usage without direct evidence.
 - Keep adoption status separate from account qualification: a company may be a plausible buyer while its current-use status is `no public evidence found`, `verified substitute user`, or `development evidence`.
 - Include both current users with supplier-switch or second-source potential and non-users whose product needs strongly match supported ingredient properties.

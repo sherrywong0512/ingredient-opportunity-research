@@ -31,6 +31,19 @@ changelog tracks the skill's own frontmatter `version` field
   now prefix-based, with regression tests (scripts/test_validate_report.py)
   wired into CI.
 
+## [1.3.3] - 2026-08-23
+### Changed
+
+- SKILL.md 1.3.2 -> 1.3.3: remaining redundant negations removed or converted
+  to affirmative requirements (negation duplicated an adjacent affirmative
+  spec): SKILL.md routing-load line, property-trace line, format-allocation
+  line, account-qualification line; research-quality-rules format line (the
+  twin of the earlier product-format negation). Load-bearing anti-patterns
+  and evidence-discipline negations (causality, "never claim usage without
+  evidence", price/regulatory technical anti-patterns, guardrails) retained.
+
+## [1.3.3] - 2026-08-23
+
 ## [1.3.2] - 2026-08-23
 ### Changed
 

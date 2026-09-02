@@ -1,6 +1,6 @@
 ---
 name: ingredient-opportunity-research
-version: 1.4.0
+version: 1.4.1
 updated: 2026-08-23
 description: Research market feasibility and downstream sales opportunities for ingredients and raw materials used in consumer products. Use when an ingredient sales team needs to identify promising consumer-product applications, investigate comparable market prices, validate formulation and process feasibility with papers or patents, assess demand, competition, regulation, consumer awareness and market-education burden, find and prioritize potential B2B customers, or prepare optional interview guides, key-account plans, and presentation outlines. Supports professionally edited Chinese, English, and bilingual deliverables.
 ---
@@ -60,6 +60,13 @@ Ask only questions that would materially change scope. If answers are unavailabl
 **Stage gating:** Stages 1–3 build the feasibility analysis. Run them only when your routing note requires a report — a general opportunity request, or a scoped request with no existing report. When the routing note lists only KA development or a sales artifact and a feasibility analysis already exists (this skill's prior output, an equivalent user-supplied analysis, or an archived case the user points to), start from that report: skip stages 1–3, do not re-search or re-derive properties, and produce only the requested piece.
 
 Load references from your routing note at the step that needs them. When the condition for a module is absent, skip it and state the omission.
+
+**Route-list-driven loads** (read from what your routing note lists, not from re-detecting the activity later):
+
+- When your routing note lists **customer discovery** → read [customer-adoption-search.md](references/customer-adoption-search.md) and [sales-deliverables.md](references/sales-deliverables.md) before the customer step.
+- When your routing note lists **KA development** → read [customer-adoption-search.md](references/customer-adoption-search.md) for account selection and [sales-deliverables.md](references/sales-deliverables.md) for the KA card workflow.
+- When your routing note lists a **sales artifact** → read [sales-deliverables.md](references/sales-deliverables.md) and build the artifact from the existing report's evidence only.
+- When your routing note lists only **market feasibility** → load none of the above; the conditional modules below apply as their conditions occur.
 
 Before collecting evidence, read [evidence-and-sources.md](references/evidence-and-sources.md). For every feasibility or customer-discovery request, read [feature-application-adoption.md](references/feature-application-adoption.md).
 

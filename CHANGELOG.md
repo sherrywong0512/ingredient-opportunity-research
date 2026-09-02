@@ -31,6 +31,18 @@ changelog tracks the skill's own frontmatter `version` field
   now prefix-based, with regression tests (scripts/test_validate_report.py)
   wired into CI.
 
+## [1.4.1] - 2026-08-23
+### Fixed
+
+- SKILL.md 1.4.0 -> 1.4.1: Run-section reference loading is now driven by
+  routing-note list membership, not only by re-detected activities — customer
+  discovery loads customer-adoption-search + sales-deliverables; KA loads both;
+  sales artifact loads sales-deliverables; feasibility-only loads none of them.
+  Closes the gap where a KA-only run (stages skipped) could miss the customer/
+  KA workflow files.
+
+## [1.4.1] - 2026-08-23
+
 ## [1.4.0] - 2026-08-23
 ### Changed
 

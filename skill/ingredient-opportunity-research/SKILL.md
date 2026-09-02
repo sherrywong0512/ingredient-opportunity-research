@@ -1,6 +1,6 @@
 ---
 name: ingredient-opportunity-research
-version: 1.3.1
+version: 1.3.2
 updated: 2026-08-23
 description: Research market feasibility and downstream sales opportunities for ingredients and raw materials used in consumer products. Use when an ingredient sales team needs to identify promising consumer-product applications, investigate comparable market prices, validate formulation and process feasibility with papers or patents, assess demand, competition, regulation, consumer awareness and market-education burden, find and prioritize potential B2B customers, or prepare optional interview guides, key-account plans, and presentation outlines. Supports professionally edited Chinese, English, and bilingual deliverables.
 ---
@@ -61,7 +61,7 @@ Conditional modules (condition first, then the read):
 - When the request is food-related → read [regulatory-audit.md](references/regulatory-audit.md); unless the user limits geography, audit China, the United States, and the European Union in one comparison table with category-specific use levels as separate rows.
 - When price, cost, value in use, or commercial feasibility affects the decision → read [price-research.md](references/price-research.md).
 - When an application, formulation, processing, shelf-life, sensory, efficacy, or experiment recommendation is discussed → read [technical-validation.md](references/technical-validation.md).
-- When market size, demand volume, production, capacity, sales volume, market value, growth, TAM/SAM/SOM, supplier financial materiality, or shared-platform value affects the decision → read [market-size-and-demand.md](references/market-size-and-demand.md); run its supply-demand gap audit when an opportunity claim depends on shortage, undersupply, low penetration, substitution potential, or proposed new capacity.
+- When market size, demand volume, production, capacity, sales volume, market value, growth, TAM/SAM/SOM, supplier financial materiality, or shared-platform value affects the decision → read [market-size-and-demand.md](references/market-size-and-demand.md). When an opportunity claim depends on shortage, undersupply, low penetration, substitution potential, or proposed new capacity → run its supply-demand gap audit.
 - For every shortlisted consumer-product application → read [product-format-screening.md](references/product-format-screening.md) and translate the application into concrete saleable product formats before estimating demand or selecting customers.
 - When consumer recognition, ingredient-led communication, trust, claim comprehension, or education effort could materially change the application or go-to-market decision → read [market-awareness-and-education.md](references/market-awareness-and-education.md). It is an optional decision module, not a mandatory report section.
 - When the deliverable is Chinese or bilingual food content → read [food-terminology-and-language.md](references/food-terminology-and-language.md) and run its target-language audit after the evidence and conclusions are fixed.

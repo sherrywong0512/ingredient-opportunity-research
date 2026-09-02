@@ -1,6 +1,6 @@
 # Existing-Case Improvement Protocol
 
-Use this protocol when revising an existing ingredient report, increasing its research-quality score, or preparing case studies for external review.
+When revising an existing ingredient report, increasing its research-quality score, or preparing case studies for external review → use this protocol.
 
 ## 1. Preserve the Baseline
 

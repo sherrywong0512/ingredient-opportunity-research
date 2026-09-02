@@ -150,7 +150,7 @@ If evidence is inaccessible or the available universe is small, disclose that li
 
 ## Market Awareness and Education — Conditional Module
 
-- Apply this module only when awareness or education could materially change positioning, channel, claim comprehension, launch cost, customer adoption, or the opportunity decision. Novelty or unfamiliarity alone does not require a standalone section.
+- When awareness or education could materially change positioning, channel, claim comprehension, launch cost, customer adoption, or the opportunity decision → apply this module. Novelty or unfamiliarity alone does not require a standalone section.
 - When applied, separately assess name recognition, benefit-concept recognition, accuracy of understanding, category association, trust/concern and claim comprehension for the defined audience, market, category and period.
 - Keep consumer awareness separate from brand, formulator, regulator, clinician and procurement awareness. Do not convert supplier-created content volume or professional familiarity into consumer understanding.
 - Every awareness conclusion must disclose the signal, method, universe or sample, prompted versus spontaneous measurement, geography, channel, period and limitation. Search volume, content volume and product count are directional signals, not awareness percentages.

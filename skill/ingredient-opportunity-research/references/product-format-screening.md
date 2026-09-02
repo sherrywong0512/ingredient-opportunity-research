@@ -1,6 +1,6 @@
 # Product Format Screening
 
-Use this protocol after an application area passes the first property-to-need screen and before estimating demand, recommending experiments or choosing customers.
+When an application area has passed the first property-to-need screen and you are about to estimate demand, recommend experiments, or choose customers → use this protocol.
 
 ## 1. Define saleable formats
 

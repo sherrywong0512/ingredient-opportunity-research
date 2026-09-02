@@ -1,6 +1,6 @@
 # Ingredient Market Awareness and Education Protocol
 
-Use this protocol only when market awareness or education could materially change the application, positioning, channel, claim, launch cost, or customer decision. Novelty alone does not make it a mandatory report module. Assess consumer awareness separately from technical feasibility and buyer awareness; otherwise omit the section or mention the issue briefly inside the relevant application.
+When market awareness or education could materially change the application, positioning, channel, claim, launch cost, or customer decision → use this protocol. Novelty alone does not make it a mandatory report module. Assess consumer awareness separately from technical feasibility and buyer awareness; otherwise omit the section or mention the issue briefly inside the relevant application.
 
 ## Define What Must Be Understood
 

@@ -1,6 +1,6 @@
 # Ingredient Price Research Protocol
 
-Use this protocol when raw-material price, formulation cost, or customer economics affect feasibility.
+When raw-material price, formulation cost, or customer economics affect feasibility → use this protocol.
 
 ## Define the Comparable Item
 

@@ -31,6 +31,20 @@ changelog tracks the skill's own frontmatter `version` field
   now prefix-based, with regression tests (scripts/test_validate_report.py)
   wired into CI.
 
+## [1.3.2] - 2026-08-23
+### Changed
+
+- SKILL.md 1.3.1 -> 1.3.2: every conditional instruction is now
+  condition-first ("When X -> use/run/apply/read") across SKILL.md and all
+  references. Fixed: SKILL.md market-size nested clause; module-gate headers
+  in market-size-and-demand.md, market-awareness-and-education.md,
+  research-quality-rules.md, price-research.md, ecommerce-label-research.md,
+  case-improvement.md, product-format-screening.md. Unconditional scope
+  declarations ("for food reports", "mandatory chain", "for every ...") kept
+  as-is (no false branch, no token waste). No semantic change.
+
+## [1.3.2] - 2026-08-23
+
 ## [1.3.1] - 2026-08-23
 ### Changed
 

@@ -1,6 +1,6 @@
 # E-commerce Ingredient-Label Research Protocol
 
-Use this protocol when current product adoption, competitor formulations, substitutes, product claims, or potential-customer status depends on retail SKU evidence.
+When current product adoption, competitor formulations, substitutes, product claims, or potential-customer status depends on retail SKU evidence → use this protocol.
 
 ## Define Coverage
 

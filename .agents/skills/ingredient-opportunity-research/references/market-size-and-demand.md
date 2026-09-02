@@ -1,6 +1,6 @@
 # Market Size and Demand Validation
 
-Use this protocol whenever ingredient demand, production, capacity, market value, growth, TAM, SAM or SOM affects a recommendation. The goal is a traceable decision range, not a decorative market number.
+When ingredient demand, production, capacity, market value, growth, TAM, SAM or SOM affects a recommendation → use this protocol. The goal is a traceable decision range, not a decorative market number.
 
 ## Contents
 
@@ -59,7 +59,7 @@ For every input, show the source, period, denominator and scenario. Use current 
 
 ## 3. Audit the supply-demand gap
 
-Run this audit whenever an opportunity claim relies on shortage, unmet demand, low penetration, substitution potential, supply security, or proposed new capacity. Classify the claim on three independent axes so overlapping concepts can coexist:
+When an opportunity claim relies on shortage, unmet demand, low penetration, substitution potential, supply security, or proposed new capacity → run this audit. Classify the claim on three independent axes so overlapping concepts can coexist:
 
 ### Demand maturity
 

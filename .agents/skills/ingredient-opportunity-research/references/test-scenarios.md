@@ -62,6 +62,24 @@ Interpretation: 85–100 decision input with stated gaps; 70–84 suitable for p
    - Route: identity/specification split + market feasibility + market-size and supply-demand gap audit.
    - Check: separate generic DHA-rich microbial oil, high-EPA or high-concentration EPA+DHA oil, human nutrition and aquafeed; distinguish wild-type fermentation from genetically engineered production and verify exact-product regulatory transfer. Classify recommended-intake deficits as latent end-user need, low algal penetration as scenario addressable demand or substitution whitespace, fish-oil forecasts as resource signals until target-period requirements and available saleable supply align, and only binding or documented unfilled orders as committed demand. Treat non-binding RFQs as stated buyer interest. Compare production, sales, inventory, effective capacity and qualified supply separately; normalize active EPA+DHA content before substitution calculations; avoid double counting inventory, trade and commitments; do not infer market-wide surplus from one producer's inventory or shortage from sales growth alone. Report demand maturity, supply constraint and evidence status separately, and return `not reliably estimable` where public supply or buyer-demand inputs are not aligned.
 
+### Scoped-request routing tests
+
+A scoped request selects that piece only; it is not a license to re-run the whole analysis. These scenarios check the route table and stage gating.
+
+6. `我想知道 HMO 的 KA 攻坚卡。`（HMO 可行性已存在——用户上一步产出或 `examples/03-hmo-global-market.md`）
+   - Route: KA development only.
+   - Check: start from the existing report's evidence; pick 1–2 accounts with account thesis, evidence gaps, functional roles, one value proposition and a 30/60/90-day validation sequence; output must show no re-run of stage 1–3 research and must not add new facts beyond the report.
+   - Hard failure: the output re-derives properties, re-audits regulation, or rewrites the market analysis instead of building the card from the report.
+
+7. `只要攻击卡，但我没有报告。`（同一请求，无既有可行性）
+   - Route: KA development, gate not satisfied.
+   - Check: the skill must state that the card cannot be evidence-backed yet and either produce the feasibility analysis first or ask the user to supply/point to one; it must not silently fabricate an account thesis.
+   - Hard failure: an account thesis with no report-based evidence, or a card delivered as if it were grounded.
+
+8. General opportunity request `调研 HMO 的市场机会` must NOT auto-add customer lists, KA cards or artifacts; scoped pieces appear only when requested separately.
+
+9. `找 10 家潜在客户` with no prior report → route customer discovery, produce the report first, then the 10-account list with SKU/label coverage disclosed and not all labeled current users.
+
 ### Gap-audit adversarial assertions
 
 Use these assertions when the gap module changes. The revised skill passes only when it produces the expected classification without the forbidden inference.

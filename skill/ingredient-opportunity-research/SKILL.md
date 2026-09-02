@@ -1,6 +1,6 @@
 ---
 name: ingredient-opportunity-research
-version: 1.3.3
+version: 1.4.0
 updated: 2026-08-23
 description: Research market feasibility and downstream sales opportunities for ingredients and raw materials used in consumer products. Use when an ingredient sales team needs to identify promising consumer-product applications, investigate comparable market prices, validate formulation and process feasibility with papers or patents, assess demand, competition, regulation, consumer awareness and market-education burden, find and prioritize potential B2B customers, or prepare optional interview guides, key-account plans, and presentation outlines. Supports professionally edited Chinese, English, and bilingual deliverables.
 ---
@@ -15,16 +15,23 @@ Read [references/guardrails.md](references/guardrails.md) **now**, before anythi
 
 ## Route the Request
 
-Identify the requested mode **before** researching, and write a one-line routing note in your working notes:
+**Scope comes from what the user asks, in two shapes:**
 
-`route: [modes] | required references: [files] | gate: [which earlier output must exist]`
+- A general market-opportunity request — "analyze the market opportunity for X" — selects **Market feasibility** only: the full chain and the default report. Customer discovery, KA development and sales artifacts are added only when the user asks for them separately.
+- A scoped request naming one piece — "I want the KA attack card for HMO", "find potential customers for Y", "draft interview questions for Z" — selects **that piece only**, executed per the table below. A scoped request is not a license to re-run the whole analysis.
 
-| Mode | When to select | Adds to the workflow | Gate |
-|---|---|---|---|
-| **Market feasibility** | Default; always the first output | The full feature-to-market chain and the default report | None |
-| **Customer discovery** | User asks for potential customers | Verified customer list per `Identify Potential Customers` | Feasibility analysis must exist or be produced first |
-| **KA development** | User asks which account to attack or how to advance one | Key-account card and advance plan | Feasibility + customer list must exist |
-| **Sales artifact** | User asks for interview questions, attack card, or presentation outline | The requested artifact | Feasibility analysis must exist |
+Before researching, decompose the request into a deliverable list and write one routing note in your working notes:
+
+`route: [modes] | deliverables: [what you will output] | run: [which stages] | load: [which references] | skip: [what you will not redo]`
+
+| Mode | The user says | What you run | Gate | Output |
+|---|---|---|---|---|
+| **Market feasibility** | "Analyze the market opportunity for X" (general) | Stages 1–3, then the default report | None | Full feasibility report |
+| **Customer discovery** | "Find N potential customers for X" (separate request) | Stages 1–3 + report when none exists, then customer discovery; customer discovery only when a report exists | Account evidence; never invent usage | Report (when missing) + verified customer list |
+| **KA development** | "KA attack card for X", "which account to attack" | Start from the existing report and customer list and build the card; produce the report and list first only when neither exists | Feasibility + customer list must exist or be produced | KA card + advance plan |
+| **Sales artifact** | "Interview questions / presentation outline for X" | Artifact only, built from existing report evidence; produce the report first only when none exists | Feasibility must exist or be produced | The requested artifact |
+
+**Gates in practice:** a scoped KA or artifact request always starts from report evidence. When no feasibility analysis exists (not from this skill, not from the user, not an archived case the user points to), state that the piece cannot be evidence-backed yet and produce the feasibility analysis first — a KA card or interview guide without a report basis would be unsupported. Match the user's language for both the analysis and the piece.
 
 Required references per route (load them in `Run the Feature-to-Market Chain`, at the step that needs them):
 
@@ -49,6 +56,8 @@ Capture or state reasonable assumptions for:
 Ask only questions that would materially change scope. If answers are unavailable, proceed with explicit assumptions and label the resulting limitations. Match the user's language; support Chinese, English, or bilingual output. Do not duplicate the full report in two languages unless requested.
 
 ## Run the Feature-to-Market Chain
+
+**Stage gating:** Stages 1–3 build the feasibility analysis. Run them only when your routing note requires a report — a general opportunity request, or a scoped request with no existing report. When the routing note lists only KA development or a sales artifact and a feasibility analysis already exists (this skill's prior output, an equivalent user-supplied analysis, or an archived case the user points to), start from that report: skip stages 1–3, do not re-search or re-derive properties, and produce only the requested piece.
 
 Load references from your routing note at the step that needs them. When the condition for a module is absent, skip it and state the omission.
 

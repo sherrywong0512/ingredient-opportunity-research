@@ -31,6 +31,24 @@ changelog tracks the skill's own frontmatter `version` field
   now prefix-based, with regression tests (scripts/test_validate_report.py)
   wired into CI.
 
+## [1.4.0] - 2026-08-23
+### Changed
+
+- SKILL.md 1.3.3 -> 1.4.0 (route-to-execution contract):
+  - Scope comes from what the user asks: a general market-opportunity request
+    runs the full chain (market feasibility only); a scoped request (KA card,
+    customer list, interview guide) runs that piece only.
+  - Route table now states what each mode runs and what it skips; routing note
+    extended to deliverables/run/load/skip.
+  - Run section gains stage gating: with an existing report, KA/artifact modes
+    skip stages 1-3 and build from report evidence; without a report, the skill
+    states the gate and produces the feasibility analysis first.
+  - test-scenarios.md gains scoped-request routing tests (KA-only with report,
+    KA-only without report, no auto-add-ons, customer discovery without report).
+  - prompts/example-prompts.md gains a scoped KA-card example (HMO).
+
+## [1.4.0] - 2026-08-23
+
 ## [1.3.3] - 2026-08-23
 ### Changed
 

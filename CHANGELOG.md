@@ -31,6 +31,18 @@ changelog tracks the skill's own frontmatter `version` field
   now prefix-based, with regression tests (scripts/test_validate_report.py)
   wired into CI.
 
+## [1.4.2] - 2026-08-23
+### Added
+
+- SKILL.md 1.4.1 -> 1.4.2: minimal input (bare ingredient name) now has an
+  explicit default — full market-opportunity analysis with labeled default
+  assumptions (geography: CN/US/EU for food unless hinted; downstream:
+  consumer applications broadly; objective: explore applications), no blocking
+  questions, closing with what input would narrow the analysis. Test scenario
+  #10 covers it; README tables note the bare-name default.
+
+## [1.4.2] - 2026-08-23
+
 ## [1.4.1] - 2026-08-23
 ### Fixed
 

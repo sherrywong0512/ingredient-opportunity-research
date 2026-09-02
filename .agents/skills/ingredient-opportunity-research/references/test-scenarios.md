@@ -104,3 +104,13 @@ The framework remains useful for technical fit, regulation/standards, substitute
 - proceed only after replacing consumer-product modules with sector-specific demand, specification, tender/procurement, asset-cycle, and project-pipeline analysis.
 
 This is a boundary result, not proof that one universal workflow covers both markets.
+
+10. Bare input `HMO` (no verb, no deliverable).
+    - Route: Market feasibility by default; full market-opportunity analysis.
+    - Check: the skill must not stall on clarifying questions; it proceeds with
+      explicit labeled defaults (geography per the skill's standard scope for
+      food, downstream = consumer applications broadly, objective = explore
+      applications), states them at the top of the report, and closes with what
+      input would narrow the analysis.
+    - Hard failure: asking for more input without producing the analysis, or
+      producing a scoped artifact (customer list / KA card) that was not asked for.

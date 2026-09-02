@@ -1,6 +1,6 @@
 ---
 name: ingredient-opportunity-research
-version: 1.4.1
+version: 1.4.2
 updated: 2026-08-23
 description: Research market feasibility and downstream sales opportunities for ingredients and raw materials used in consumer products. Use when an ingredient sales team needs to identify promising consumer-product applications, investigate comparable market prices, validate formulation and process feasibility with papers or patents, assess demand, competition, regulation, consumer awareness and market-education burden, find and prioritize potential B2B customers, or prepare optional interview guides, key-account plans, and presentation outlines. Supports professionally edited Chinese, English, and bilingual deliverables.
 ---
@@ -15,8 +15,9 @@ Read [references/guardrails.md](references/guardrails.md) **now**, before anythi
 
 ## Route the Request
 
-**Scope comes from what the user asks, in two shapes:**
+**Scope comes from what the user asks, in three shapes:**
 
+- A minimal input — just an ingredient name or a name plus a hint ("HMO", "isomalt in China") — selects **Market feasibility** by default: output the full market-opportunity analysis for that ingredient. Missing research-contract fields become explicit, labeled default assumptions instead of blocking questions: geography defaults to the user's language/location hint when present, otherwise the skill's standard scope (for food ingredients, audit China, the United States and the European Union); downstream scope defaults to the ingredient's consumer applications broadly; business objective defaults to exploring applications. State these defaults at the top of the report and close with what input would narrow the analysis.
 - A general market-opportunity request — "analyze the market opportunity for X" — selects **Market feasibility** only: the full chain and the default report. Customer discovery, KA development and sales artifacts are added only when the user asks for them separately.
 - A scoped request naming one piece — "I want the KA attack card for HMO", "find potential customers for Y", "draft interview questions for Z" — selects **that piece only**, executed per the table below. A scoped request is not a license to re-run the whole analysis.
 

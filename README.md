@@ -106,13 +106,14 @@ The default output is a Markdown feasibility report. Customer lists, interview g
 
 | Deliverable | Trigger | Role |
 |---|---|---|
-| Full feasibility report | General question ("analyze the market opportunity for X") | **Default** — produced for every general request |
+| Full feasibility report | Just an ingredient name, or a general question ("analyze the market opportunity for X") | **Default** — produced for every general or minimal request |
 | Potential-customer list (N accounts) | "find N potential customers for X" | **Optional** — only when asked separately |
 | KA attack card | "KA attack card for X" / "which account to attack" | **Optional** — only when asked; grounded in the report |
 | Interview guide / presentation outline | named artifact request | **Optional** — only when asked; grounded in the report |
 
 Rules:
 
+- Just an ingredient name ("HMO") defaults to the full market-opportunity analysis; missing details become labeled assumptions, and the report closes with what input would narrow it.
 - A general request produces the report **only** — customer lists, KA cards and artifacts are never auto-added.
 - A scoped request produces **that piece only**, built from the existing report's evidence; it does not re-run the market research.
 - No report yet, scoped request → the skill says the piece cannot be evidence-backed yet and produces the feasibility analysis first.

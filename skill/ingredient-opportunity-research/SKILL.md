@@ -1,6 +1,6 @@
 ---
 name: ingredient-opportunity-research
-version: 1.4.3
+version: 1.4.4
 updated: 2026-08-23
 description: Research market feasibility and downstream sales opportunities for ingredients and raw materials used in consumer products. Use when an ingredient sales team needs to identify promising consumer-product applications, investigate comparable market prices, validate formulation and process feasibility with papers or patents, assess demand, competition, regulation, consumer awareness and market-education burden, find and prioritize potential B2B customers, or prepare optional interview guides, key-account plans, and presentation outlines. Supports professionally edited Chinese, English, and bilingual deliverables.
 ---
@@ -69,7 +69,7 @@ Load references from your routing note at the step that needs them. When the con
 - When your routing note lists a **sales artifact** → read [sales-deliverables.md](references/sales-deliverables.md) and build the artifact from the existing report's evidence only.
 - When your routing note lists only **market feasibility** → load none of the above; the conditional modules below apply as their conditions occur.
 
-Before collecting evidence, read [evidence-and-sources.md](references/evidence-and-sources.md). For every feasibility or customer-discovery request, read [feature-application-adoption.md](references/feature-application-adoption.md).
+Before collecting evidence, read [evidence-and-sources.md](references/evidence-and-sources.md). For every feasibility or customer-discovery request, read [feature-application-adoption.md](references/feature-application-adoption.md). For identity, regulatory-status, claims, standards and patent questions, consult the official-source registry [official-sources.md](references/official-sources.md) first and cite the official entry as the E1 anchor; third-party aggregators are search aids, not substitutes.
 
 Conditional modules (condition first, then the read):
 

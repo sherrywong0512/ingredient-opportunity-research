@@ -38,6 +38,27 @@ changelog tracks the skill's own frontmatter `version` field
   skipped). Kept as a local tool, not CI-gated, because external sites
   rate-limit/go down; registered in REQUIRED and documented in README.
 
+## [1.4.4] - 2026-08-23
+### Added
+
+- SKILL.md 1.4.3 -> 1.4.4: official-source registry (references/official-sources.md).
+  Prescribes the canonical official source per evidence type x jurisdiction
+  (chemical identity: FDA GSRS/UNII, CAS, PubChem; food additives: GB 2760 /
+  eCFR 21 CFR / EU 1333/2008; claims: GB 28050 / EFSA; patents: official
+  offices; cosmetics/pet food special rows) and explicitly marks evidence
+  types with NO official source (market size, prices, adoption, company
+  intent) so non-official data is never dressed up in official language.
+  SKILL.md and evidence-and-sources.md route identity/regulatory/claims/
+  standards/patent checks to the registry (official entry = E1 anchor;
+  aggregators = search aids only).
+- scripts/check_links.py reworked: URLs with balanced parentheses no longer
+  truncated; 404/410 now two-channel verified via the Wayback Machine (recent
+  snapshot => alive-but-bot-blocked, not dead). Re-check found ZERO dead links
+  in examples (earlier 9 'dead' verdicts were checker artifacts: FDA/Reckitt
+  bot-block 404s to datacenter IPs + a parenthesis-truncation bug).
+
+## [1.4.4] - 2026-08-23
+
 ## [1.4.3] - 2026-08-23
 ### Added
 

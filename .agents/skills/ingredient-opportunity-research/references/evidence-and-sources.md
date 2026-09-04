@@ -50,6 +50,8 @@ Prefer sources in this order, adjusting for the question:
 
 Use current sources for prices, product availability, regulations, personnel, market rankings, and company activity. Record the access date.
 
+Where an official registry exists for the evidence type and jurisdiction (chemical identity, food-additive or GRAS status, novel food, claims thresholds, standards, patents), consult it first and cite the official entry as the E1 anchor — see [official-sources.md](official-sources.md). Third-party aggregators (e.g. foodmate) are search aids, not substitutes for the official text; evidence types with no official source are listed there so they are never dressed up in official language.
+
 ## Paid-Data and Public-Source Paths
 
 ### With authorized data tools

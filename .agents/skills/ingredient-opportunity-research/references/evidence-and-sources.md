@@ -28,6 +28,16 @@ For literature, reading depth is not evidence quality. A full supplier brochure 
 
 Do not write `studies show`, `research indicates`, or an uncited property adjective such as `stable`, `low hygroscopicity`, or `well tolerated`. Replace it with the measured observation and its test conditions, or label it `unverified claim`.
 
+## Source Authenticity
+
+A well-formed but nonexistent citation is still a hallucination. These rules close the "plausible-looking reference" failure mode:
+
+- Cite only sources you actually read in this task — the full text, the abstract, or the exact page/section/record you inspected. Never generate a DOI, URL, page number, author, title, or quoted figure from memory, pattern matching, or "what this paper probably says".
+- When you remember a source but did not open it in this task, treat it as a recall candidate: verify it by opening it, or drop it. Do not cite it as if read.
+- A citation counts as verified only when you can state where you saw it (the URL/DOI you opened, the PDF page, the database record) and what it actually says. Anything less is an unverified claim.
+- When a source URL fails or a DOI does not resolve during research, record the access failure and either use the public-source fallback or drop the claim — never substitute a fabricated locator, and never "repair" a broken source by inventing a similar-looking one.
+- Do not retrofit a real-looking citation to a number you produced first; the number must come from the source, not the citation from the number.
+
 ## Source Order
 
 Prefer sources in this order, adjusting for the question:

@@ -31,6 +31,20 @@ changelog tracks the skill's own frontmatter `version` field
   now prefix-based, with regression tests (scripts/test_validate_report.py)
   wired into CI.
 
+## [1.4.3] - 2026-08-23
+### Added
+
+- SKILL.md 1.4.2 -> 1.4.3 (source-authenticity hardening):
+  - evidence-and-sources.md gains a Source Authenticity section: cite only
+    sources actually read; never generate DOIs/URLs/page numbers from memory;
+    recall candidates must be verified or dropped; access failures use the
+    fallback, never a fabricated locator.
+  - test-scenarios.md gains adversarial hallucination probes (planted unsourced
+    claims, fake DOIs, supplier decks, company announcements, review causality,
+    abstract overreach) with expected evidence-discipline handling.
+
+## [1.4.3] - 2026-08-23
+
 ## [1.4.2] - 2026-08-23
 ### Added
 

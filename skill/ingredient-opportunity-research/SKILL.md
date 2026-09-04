@@ -1,6 +1,6 @@
 ---
 name: ingredient-opportunity-research
-version: 1.4.2
+version: 1.4.3
 updated: 2026-08-23
 description: Research market feasibility and downstream sales opportunities for ingredients and raw materials used in consumer products. Use when an ingredient sales team needs to identify promising consumer-product applications, investigate comparable market prices, validate formulation and process feasibility with papers or patents, assess demand, competition, regulation, consumer awareness and market-education burden, find and prioritize potential B2B customers, or prepare optional interview guides, key-account plans, and presentation outlines. Supports professionally edited Chinese, English, and bilingual deliverables.
 ---

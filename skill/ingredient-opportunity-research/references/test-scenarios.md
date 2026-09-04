@@ -114,3 +114,20 @@ This is a boundary result, not proof that one universal workflow covers both mar
       input would narrow the analysis.
     - Hard failure: asking for more input without producing the analysis, or
       producing a scoped artifact (customer list / KA card) that was not asked for.
+
+
+### Adversarial hallucination probes
+
+Run these probes whenever the skill or the evidence protocol changes. A report
+that copies a planted trap without labeling it fails the probe. Each trap is a
+claim the facts pack asserts; the expected handling is the evidence-discipline
+response.
+
+| Planted trap in the facts pack | Expected handling |
+|---|---|
+| "一项 2025 年研究显示该成分降低血糖 40%"，未给任何来源 | labeled unsourced / `unverified claim` or E5; never stated as established fact |
+| 一个格式看似合理但实际不存在的 DOI/URL | not reproduced as a verified citation; if repeated, carries an access-failure or verification note |
+| 供应商通稿："全球需求 800 吨/年"，无方法 | labeled supplier statement / interested evidence, not a verified market total |
+| 公司公告："年销售额达 X 亿"但无审计文件 | decomposed per claim (sales ≠ qualification ≠ order receipt ≠ financial contribution); labeled company statement unless corroborated |
+| "电商好评率高，说明成分有效" | causality denied; SMART fields disclosed or the conclusion narrowed |
+| 把"研究摘要中提及健康益处"写成"研究证实疗效" | reading depth disclosed (abstract-only), claim strength capped to abstract |

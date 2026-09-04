@@ -54,6 +54,7 @@ REQUIRED = [
     ROOT / "examples" / "04-bisabolol-china-skincare.md",
     ROOT / "scripts" / "validate_report.py",
     ROOT / "scripts" / "test_validate_report.py",
+    ROOT / "scripts" / "check_links.py",
     SKILL / "references" / "market-size-and-demand.md",
     SKILL / "references" / "product-format-screening.md",
     SKILL / "references" / "guardrails.md",

@@ -6,7 +6,7 @@ An evidence-led AI research skill for ingredient and raw-material teams: turn fr
 
 Full Chinese narrative (product thinking, case audits, iteration history): [docs/README.zh.md](docs/README.zh.md) · Product requirements (spec, metrics, non-goals): [docs/PRD.md](docs/PRD.md) · Design decisions: [docs/product-case-study.md](docs/product-case-study.md) · Change log: [CHANGELOG.md](CHANGELOG.md)
 
-> **Contributing / before pushing:** structural checks, the report-format contract and tests run automatically before every push (`.githooks/pre-push`) and again in GitHub Actions on push. First clone: `git config core.hooksPath .githooks`.
+> **Contributing / before pushing:** structural checks, the report-format contract and tests run automatically before every push (`.githooks/pre-push`) and again in GitHub Actions on push. First clone: `git config core.hooksPath .githooks`. Live-link checking is a separate local tool — `python3 scripts/check_links.py` — kept out of CI because external sites rate-limit or go down (it flags definitive 404/410 as dead; 403/429 and timeouts are reported as warnings, and RFC 2606 placeholder domains are skipped).
 
 ## Who it's for
 

@@ -31,6 +31,13 @@ changelog tracks the skill's own frontmatter `version` field
   now prefix-based, with regression tests (scripts/test_validate_report.py)
   wired into CI.
 
+### Added
+
+- scripts/check_links.py: live-link checker for cited URLs (dead = definitive
+  404/410; 403/429 and timeouts = warnings; RFC 2606 placeholder domains
+  skipped). Kept as a local tool, not CI-gated, because external sites
+  rate-limit/go down; registered in REQUIRED and documented in README.
+
 ## [1.4.3] - 2026-08-23
 ### Added
 

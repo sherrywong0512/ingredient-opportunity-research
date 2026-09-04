@@ -38,6 +38,14 @@ changelog tracks the skill's own frontmatter `version` field
   skipped). Kept as a local tool, not CI-gated, because external sites
   rate-limit/go down; registered in REQUIRED and documented in README.
 
+### Fixed
+
+- examples/03-hmo-global-market.md: GRN 1157 citation pointed to a moved FDA
+  media download (404, no Wayback snapshot); replaced with the official FDA
+  GRAS Notices database record and an access date. Note: whether GRN 1157's
+  content matches the example's "five-HMO combination" wording is a content
+  verification item for expert review, not resolved here.
+
 ## [1.4.4] - 2026-08-23
 ### Added
 
